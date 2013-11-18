@@ -8,7 +8,7 @@ body {
   background-image: url("../images/city.jpg");
   background-repeat: no-repeat;
   background-attachment: fixed;
-  background-position: 50% 50%;
+  background-position: 50% 20%;
 }
 
 
@@ -16,7 +16,7 @@ body {
 -------------------------------------------------- */
 
 .header {
-  margin-bottom: 2.5em;
+  /*margin-bottom: 2.5em;*/
 }
 
 .header .logo {
