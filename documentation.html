@@ -9,13 +9,10 @@
     <meta name="author" content="">
     <link rel="shortcut icon" href="assets/images/favicon.png">
 
-    <title>eatabit.io</title>
+    <title>eatabit.io | Documentation</title>
 
     <!-- Bootstrap core CSS -->
     <link href="assets/stylesheets/bootstrap.min.css" rel="stylesheet">
-
-    <!-- Just for debugging purposes. Don't actually copy this line! -->
-    <!--[if lt IE 9]><script src="../../docs-assets/js/ie8-responsive-file-warning.js"></script><![endif]-->
 
     <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!--[if lt IE 9]>
@@ -29,119 +26,71 @@
   </head>
 <!-- NAVBAR
 ================================================== -->
-  <body>
+  <body class="page-documentation">
     <div class="container header">
-        <div class="row">
-            <div class="col-md-3 logo">
-                <img src="assets/images/logo.png" alt="eatabit.io">
-            </div>
-            <div class="col-md-8">
-                <div class="pull-right">
-                    <img src="assets/images/printer.png" alt="cellular printer">
-                </div>
-            </div>
-            <div class="col-md-1 links">
-                <div class="btn-group">
-                  <button type="button" class="btn btn-success dropdown-toggle" data-toggle="dropdown">
-                    <span class="caret"></span>
-                  </button>
-                  <ul class="dropdown-menu pull-right" role="menu">
-                    <li>
-                        <a href="./documentation.html"><i class="fa fa-book"></i> Docs</a>
-                    </li>
-                    <li>
-                        <a href="./sign_up"><i class="fa fa-user"></i> Sign up</a>
-                    </li>
-                    <li class="divider"></li>
-                    <li>
-                        <a href="./sign_in"><i class="fa fa-sign-in"></i> Sign in</a>
-                    </li>
-                  </ul>
-                </div>
-            </div>
+      <div class="row">
+        <div class="col-md-3 logo">
+          <a href="./index.html"><img src="./assets/images/logo.png" alt="eatabit.io"></a>
+        </div>
+        <div class="col-md-8"></div>
+        <div class="col-md-1 links">
+          <div class="btn-group">
+            <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown">
+              <span class="caret"></span>
+            </button>
+            <ul class="dropdown-menu pull-right" role="menu">
+              <li><a href="./documentation.html"><i class="fa fa-book"></i> API docs</a></li>
+              <li><a href="./sign_up"><i class="fa fa-user"></i> Sign up</a></li>
+              <li class="divider"></li>
+              <li><a href="./sign_in"><i class="fa fa-sign-in"></i> Sign in</a></li>
+            </ul>
+          </div>
         </div>
     </div>
-
-    <!-- Marketing messaging and featurettes
-    ================================================== -->
-    <!-- Wrap the rest of the page in another container to center all the content. -->
-
-    <div class="container marketing">
-
-      <!-- Three columns of text below the carousel -->
-      <div class="row">
-        <div class="col-lg-4">
-          <p><i class="fa fa-thumbs-up fa-5x"></i></p>
-          <h2>Partner</h2>
-          <p>Sign up with us and connect with your restaurants. You supply the order, we get it to the restaurant, then we split the fee 50/50.</p>
-          <p><a class="btn btn-default" href="./subscriptions.html" role="button">View details &raquo;</a></p>
-        </div><!-- /.col-lg-4 -->
-        <div class="col-lg-4">
-          <p><i class="fa fa-cloud-upload fa-5x"></i></p>
-          <h2>Post</h2>
-          <p>Our RESTful API connects your subscription to our fleet of printers to which you can submit and monitor your print jobs.</p>
-          <p><a class="btn btn-default" href="./documentation.html" role="button">View details &raquo;</a></p>
-        </div><!-- /.col-lg-4 -->
-        <div class="col-lg-4">
-          <p><i class="fa fa-print fa-5x"></i></p>
-          <h2>Print</h2>
-          <p>Our purpose-built, 2-way, cellular printers are placed inside our partner restaurants and alert the staff when your order is ready to print.</p>
-          <p><a class="btn btn-default" href="./printers.html" role="button">View details &raquo;</a></p>
-        </div><!-- /.col-lg-4 -->
-      </div><!-- /.row -->
-
-
-      <!-- START THE FEATURETTES -->
-
-      <hr class="featurette-divider">
-
-      <div class="row featurette">
-        <div class="col-md-7">
-          <h2 class="featurette-heading">Partner with us. <span class="text-muted">We've got a guy on the inside...</span></h2>
-          <p class="lead">Taking orders online is easy (ok, not <em>that</em> easy) but getting the order into the hands of the restaurant - now that's <strong><em>hard</em></strong>. That's where we come in. Partner with us, and we deliver your orders instantly into the restaurant's hands. Partnership is simple: you provide orders, we deliver them. Then we split the fee 50/50.</p>
-        </div>
-        <div class="col-md-5">
-          <img class="featurette-image img-responsive" src="assets/images/check.png" alt="eatabit.io partnership">
+  </div>
+  <div class="container documentation">
+    <div class="row">
+      <div class="page-header"><h1>API documentation</h1></div>
+    </div>
+    <div class="row">
+      <div class="col-md-2 sidebar">
+        <ul class="list-unstyled">
+          <li>Restaurants</li>
+          <li>
+            <ul class="list-unstyled">
+              <li><a href="">#read</a></li>
+            </ul>
+          </li>
+          <li>Printers</li>
+          <li>
+            <ul class="list-unstyled">
+              <li><a href="">#read</a></li>
+            </ul>
+          </li>
+          <li>Orders</li>
+          <li>
+            <ul class="list-unstyled">
+              <li><a href="">#create</a></li>
+              <li><a href="">#read</a></li>
+              <li><a href="">#update</a></li>
+              <li><a href="">#destroy</a></li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+      <div class="col-md-1"></div>
+      <div class="col-md-8 content">
+        <div class="" id="restaurants-read">
+          <h2>Restaurants#read</h2>
         </div>
       </div>
+    </div>
+  </div>
 
-      <hr class="featurette-divider">
-
-      <div class="row featurette">
-        <div class="col-md-5">
-          <img class="featurette-image img-responsive" src="assets/images/json.png" alt="eatabit.io json api">
-        </div>
-        <div class="col-md-7">
-          <h2 class="featurette-heading">Post to a standard API. <span class="text-muted">REST is the best.</span></h2>
-          <p class="lead">We provide a standard JSON API which allows you to view restaurants' realtime pickup and delivery times, create new print jobs and view status on existing jobs. So with one POST, your order is formatted, transmitted and printed - done.</p>
-        </div>
-      </div>
-
-      <hr class="featurette-divider">
-
-      <div class="row featurette">
-        <div class="col-md-7">
-          <h2 class="featurette-heading">Print inside the restaurant. <span class="text-muted">Paper is king.</span></h2>
-          <p class="lead">Nothing beats a printed ticket. Our purpose-built, patented, 2-way printers are placed inside the restaurant - where all the action is. The printers alert the staff when orders are ready to print and supply you with realtime confirmations and fulfillment times.</p>
-        </div>
-        <div class="col-md-5">
-          <img class="featurette-image img-responsive" src="assets/images/board.png" alt="eatabit.io cellular receipt printer">
-        </div>
-      </div>
-
-      <hr class="featurette-divider">
-
-      <!-- /END THE FEATURETTES -->
-
-
-      <!-- FOOTER -->
-      <footer>
-        <p class="pull-right"><a href="#">Back to top</a></p>
-        <p>&copy; 2013 eatabit.com, Inc. &middot; <a href="#">Privacy</a> &middot; <a href="#">Terms</a></p>
-      </footer>
-
-    </div><!-- /.container -->
-
+    <nav class="navbar navbar-default navbar-fixed-bottom" role="navigation">
+      <p class="navbar-text navbar-right"><a href="#">Back to top</a></p>
+      <p class="navbar-text navbar-left"><a href="#">&copy; 2013 eatabit.com, Inc.</a> &middot; <a href="#">Privacy</a> &middot; <a href="#">Terms</a></p>
+    </nav>
 
     <!-- Bootstrap core JavaScript
     ================================================== -->

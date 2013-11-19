@@ -5,12 +5,14 @@
 body {
   padding-bottom: 40px;
   color: #5a5a5a;
+}
+
+body.page-home {
   background-image: url("../images/city.jpg");
   background-repeat: repeat-y;
   background-attachment: fixed;
   background-position: 50% 0%;
 }
-
 
 /* HEADER CONTENT
 -------------------------------------------------- */
@@ -24,7 +26,7 @@ body {
 }
 
 .links a {
-  color: #eee   ;
+  color: #eee;
 }
 
 /* MARKETING CONTENT
@@ -75,7 +77,20 @@ i.featurette-icon {
   font-size: 5em;
 }
 
+/* Documentation
+------------------------- */
 
+.documentation .sidebar {
+  margin-top: 1.5em;
+}
+
+.documentation li {
+  font-size: 24px;
+}
+
+.documentation ul ul li {
+  margin-left: 1.25em;
+}
 
 /* RESPONSIVE CSS
 -------------------------------------------------- */
