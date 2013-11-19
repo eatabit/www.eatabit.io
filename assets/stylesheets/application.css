@@ -15,15 +15,17 @@ body {
 /* HEADER CONTENT
 -------------------------------------------------- */
 
-.header {
-  /*margin-bottom: 2.5em;*/
+.header .logo, .header .links {
+  margin-top: 2em;
 }
 
-.header .logo {
-    margin-top: 2em;
-  }
+.links {
+  line-height: 45px;
 }
 
+.links a {
+  color: #eee   ;
+}
 
 /* MARKETING CONTENT
 -------------------------------------------------- */

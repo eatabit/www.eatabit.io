@@ -24,20 +24,39 @@
     <![endif]-->
 
     <!-- Custom styles for this template -->
-    <link href="assets/stylesheets/application.css" rel="stylesheet">
     <link href="http://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
+    <link href="assets/stylesheets/application.css" rel="stylesheet">
   </head>
 <!-- NAVBAR
 ================================================== -->
   <body>
     <div class="container header">
         <div class="row">
-            <div class="col-md-4 logo">
+            <div class="col-md-3 logo">
                 <img src="assets/images/logo.png" alt="eatabit.io">
             </div>
-            <div class="col-md-7">
+            <div class="col-md-8">
                 <div class="pull-right">
                     <img src="assets/images/printer.png" alt="cellular printer">
+                </div>
+            </div>
+            <div class="col-md-1 links">
+                <div class="btn-group">
+                  <button type="button" class="btn btn-success dropdown-toggle" data-toggle="dropdown">
+                    <span class="caret"></span>
+                  </button>
+                  <ul class="dropdown-menu pull-right" role="menu">
+                    <li>
+                        <a href="./documentation.html"><i class="fa fa-book"></i> Docs</a>
+                    </li>
+                    <li>
+                        <a href="./sign_up"><i class="fa fa-user"></i> Sign up</a>
+                    </li>
+                    <li class="divider"></li>
+                    <li>
+                        <a href="./sign_in"><i class="fa fa-sign-in"></i> Sign in</a>
+                    </li>
+                  </ul>
                 </div>
             </div>
         </div>
@@ -79,7 +98,7 @@
       <div class="row featurette">
         <div class="col-md-7">
           <h2 class="featurette-heading">Partner with us. <span class="text-muted">We've got a guy on the inside...</span></h2>
-          <p class="lead">Taking orders online is easy (ok, not <em>that</em> easy) but getting the order into the hands of the restaurant - now that's <strong><em>hard</em></strong>. That's where we come in. Partner with us, and your order gets priority delivery into the restaurant. Partnership is simple: you provide orders, we deliver them. Then we split the fee 50/50.</p>
+          <p class="lead">Taking orders online is easy (ok, not <em>that</em> easy) but getting the order into the hands of the restaurant - now that's <strong><em>hard</em></strong>. That's where we come in. Partner with us, and we deliver your orders instantly into the restaurant's hands. Partnership is simple: you provide orders, we deliver them. Then we split the fee 50/50.</p>
         </div>
         <div class="col-md-5">
           <img class="featurette-image img-responsive" src="assets/images/check.png" alt="eatabit.io partnership">
@@ -94,7 +113,7 @@
         </div>
         <div class="col-md-7">
           <h2 class="featurette-heading">Talk to a standard API. <span class="text-muted">REST is the best.</span></h2>
-          <p class="lead">We provide a standard JSON API which allows you to view restaurants' realtime pickup and delivery times, create new print jobs and view status on existing jobs. So with one POST, your order is fromatted, transmitted and printed - done.</p>
+          <p class="lead">We provide a standard JSON API which allows you to view restaurants' realtime pickup and delivery times, create new print jobs and view status on existing jobs. So with one POST, your order is formatted, transmitted and printed - done.</p>
         </div>
       </div>
 
