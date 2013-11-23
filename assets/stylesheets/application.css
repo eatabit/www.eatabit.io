@@ -80,20 +80,7 @@ i.featurette-icon {
 /* Documentation
 ------------------------- */
 
-.documentation li {
-  font-size: 24px;
-}
-
-.documentation ul ul li {
-  margin-left: 1.25em;
-}
-
-.documentation ul.resources li {
-  font-size: 1.3em;
-}
-
-.documentation ul.resources li a {
-  font-size: 0.75em;
+.documentation {
 }
 
 /* RESPONSIVE CSS
