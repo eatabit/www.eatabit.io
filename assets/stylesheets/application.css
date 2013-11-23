@@ -80,7 +80,12 @@ i.featurette-icon {
 /* Documentation
 ------------------------- */
 
-.documentation {
+.documentation .content .panel {
+  margin-top: 1em;
+}
+
+.documentation .panel table tr:first-child td:first-child {
+  width: 130px;
 }
 
 /* RESPONSIVE CSS

@@ -81,8 +81,41 @@
           <div class="row">
             <dl class="dl-horizontal">
               <dt>Authentication</dt>
-              <dd>All requests must contain a valid <strong>:auth_key</strong> in the form of an http parameter. Your account has a <strong>DEVELOPMENT</strong>
+              <dd>
+                All requests must contain a valid <strong>:auth_key</strong> in the form of an http parameter. Your account has a <strong>DEVELOPMENT</strong>
                 and a <strong>PRODUCTION</strong> key.
+
+                <div class="panel panel-success">
+                  <div class="panel-heading">
+                    <h3 class="panel-title">Valid request</h3>
+                  </div>
+                  <table class="table table-bordered">
+                    <tr>
+                      <td class="active"><strong>GET</strong></td>
+                      <td>https://api.eatabit.io/accounts?auth_key=A7GB_P3yS9lC2zEH5aO-sA</td>
+                    </tr>
+                  </table>
+                </div>
+
+                <div class="panel panel-danger">
+                  <div class="panel-heading">
+                    <h3 class="panel-title">Invalid request</h3>
+                  </div>
+                  <table class="table table-bordered">
+                    <tr>
+                      <td class="active"><strong>GET</strong></td>
+                      <td>https://api.eatabit.io/accounts</td>
+                    </tr>
+                    <tr>
+                      <td class="active"><strong>Response code</strong></td>
+                      <td>400</td>
+                    </tr>
+                    <tr>
+                      <td class="active"><strong>Response body</strong></td>
+                      <td>{ "error":"auth_key is missing" }</td>
+                    </tr>
+                  </table>
+                </div>
               </dd>
             </dl>
           </div>
