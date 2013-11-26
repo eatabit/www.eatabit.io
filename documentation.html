@@ -39,7 +39,7 @@
               <span class="caret"></span>
             </button>
             <ul class="dropdown-menu pull-right" role="menu">
-              <li><a href="./documentation.html"><i class="fa fa-book"></i> API docs</a></li>
+              <li><a href="./documentation.html"><i class="fa fa-book"></i> API</a></li>
               <li><a href="./sign_up"><i class="fa fa-user"></i> Sign up</a></li>
               <li class="divider"></li>
               <li><a href="./sign_in"><i class="fa fa-sign-in"></i> Sign in</a></li>
@@ -58,6 +58,7 @@
         <div class="panel panel-success">
           <div class="panel-heading"><i class="fa fa-gear"></i> Resources</div>
           <ul class="list-group resources">
+            <li class="list-group-item"><a href="#" class="resource-link" data-link="resource-authorization">Authentication</a></li>
             <li class="list-group-item"><a href="#" class="resource-link" data-link="resource-accounts">/v1/accounts</a></li>
             <li class="list-group-item"><a href="#" class="resource-link" data-link="resource-restaurants-id">/v1/restaurants/:id</a></li>
             <li class="list-group-item"><a href="#" class="resource-link" data-link="resource-printers-id">/v1/printers/:id</a></li>
@@ -69,8 +70,8 @@
       <div class="col-md-1"></div>
       <div class="col-md-8" id="resource-container">
 
-        <div class="resource-content show" id="resource-home">
-          <h3>API reference</h3>
+        <div class="resource-content show" id="resource-authorization">
+          <h3>Authentication</h3>
           <hr/>
           <div class="row">
             <dl class="dl-horizontal">
@@ -83,7 +84,7 @@
               <dt>Authentication</dt>
               <dd>
                 All requests must contain a valid <strong>:auth_key</strong> in the form of an http parameter. Your account has a <strong>DEVELOPMENT</strong>
-                and a <strong>PRODUCTION</strong> key.
+                and a <strong>PRODUCTION</strong> key which are available in your login.
 
                 <div class="panel panel-success">
                   <div class="panel-heading">
@@ -130,14 +131,8 @@
         </div>
 
         <div class="resource-content hidden" id="resource-accounts">
-          <h3>/accounts</h3>
+          <h3>/v1/accounts</h3>
           <hr/>
-          <div class="row">
-            <dl class="dl-horizontal">
-              <dt>API endpoint</dt>
-              <dd>https://api.eatabit.io</dd>
-            </dl>
-          </div>
           <div class="row">
             <dl class="dl-horizontal">
               <dt>Authentication</dt>
@@ -190,7 +185,7 @@
         </div>
 
         <div class="resource-content hidden" id="resource-restaurants-id">
-          <h3>/restaurants/:id</h3>
+          <h3>/v1/restaurants/:id</h3>
           <hr/>
           <div class="row">
             <dl class="dl-horizontal">
@@ -250,7 +245,7 @@
         </div>
 
         <div class="resource-content hidden" id="resource-printers-id">
-          <h3>/printers/:id</h3>
+          <h3>/v1/printers/:id</h3>
           <hr/>
           <div class="row">
             <dl class="dl-horizontal">
@@ -310,7 +305,7 @@
         </div>
 
         <div class="resource-content hidden" id="resource-orders">
-          <h3>/orders</h3>
+          <h3>/v1/orders</h3>
           <hr/>
           <div class="row">
             <dl class="dl-horizontal">
@@ -370,7 +365,7 @@
         </div>
 
         <div class="resource-content hidden" id="resource-orders-id">
-          <h3>/orders/:id</h3>
+          <h3>/v1/orders/:id</h3>
           <hr/>
           <div class="row">
             <dl class="dl-horizontal">
