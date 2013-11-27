@@ -92,9 +92,13 @@
                 All requests must contain a valid <strong>:auth_key</strong> in the form of an http parameter. Your account has a <strong>DEVELOPMENT</strong>
                 and a <strong>PRODUCTION</strong> key which are available in your login.
                 <br/><br/>
+
+                <!-- GET /v1/accounts SUCCESS -->
+
+
                 <div class="panel panel-success">
                   <div class="panel-heading">
-                    <h3 class="panel-title">Valid request (using DEVELOPMENT key)</h3>
+                    <h3 class="panel-title">Valid request</h3>
                   </div>
                   <table class="table table-bordered">
                     <tr>
@@ -130,6 +134,8 @@
                   </table>
                 </div>
 
+                <!-- GET /v1/accounts FAILURE -->
+
                 <div class="panel panel-danger">
                   <div class="panel-heading">
                     <h3 class="panel-title">Invalid request</h3>
@@ -140,8 +146,13 @@
                       <td>GET</td>
                     </tr>
                     <tr>
-                      <td class="active"><strong>URL</strong></td>
-                      <td>https://api.eatabit.io/v1/accounts</td>
+                      <td class="active"><strong>Request</strong></td>
+                      <td>
+                        <div class="curl">
+                          <div>curl https://api.eatabit.io/v1/accounts \</div>
+                          <div class="line">-X GET</div>
+                        </div>
+                      </td>
                     </tr>
                     <tr>
                       <td class="active"><strong>Response code</strong></td>
@@ -171,6 +182,9 @@
             <dl class="dl-horizontal">
               <dt>Accounts</dt>
               <dd>
+
+                <!-- GET /v1/accounts SUCCESS -->
+
                 <div class="panel panel-success">
                   <div class="panel-heading">
                     <h3 class="panel-title">Valid request</h3>
@@ -208,42 +222,8 @@
                     </tr>
                   </table>
                 </div>
-              </dd>
-            </dl>
-          </div>
-        </div>
 
-        <div class="resource-content hidden" id="resource-restaurants-id">
-          <h3>/v1/restaurants/:id</h3>
-          <hr/>
-          <div class="row">
-            <dl class="dl-horizontal">
-              <dt>API endpoint</dt>
-              <dd>https://api.eatabit.io</dd>
-            </dl>
-          </div>
-          <div class="row">
-            <dl class="dl-horizontal">
-              <dt>Authentication</dt>
-              <dd>
-                All requests must contain a valid <strong>:auth_key</strong> in the form of an http parameter. Your account has a <strong>DEVELOPMENT</strong>
-                and a <strong>PRODUCTION</strong> key.
-
-                <div class="panel panel-success">
-                  <div class="panel-heading">
-                    <h3 class="panel-title">Valid request</h3>
-                  </div>
-                  <table class="table table-bordered">
-                    <tr>
-                      <td class="active"><strong>Verb</strong></td>
-                      <td>GET</td>
-                    </tr>
-                    <tr>
-                      <td class="active"><strong>URL</strong></td>
-                      <td>https://api.eatabit.io/accounts?auth_key=A7GB_P3yS9lC2zEH5aO-sA</td>
-                    </tr>
-                  </table>
-                </div>
+                <!-- GET /v1/accounts FAILURE -->
 
                 <div class="panel panel-danger">
                   <div class="panel-heading">
@@ -255,8 +235,13 @@
                       <td>GET</td>
                     </tr>
                     <tr>
-                      <td class="active"><strong>URL</strong></td>
-                      <td>https://api.eatabit.io/accounts</td>
+                      <td class="active"><strong>Request</strong></td>
+                      <td>
+                        <div class="curl">
+                          <div>curl https://api.eatabit.io/v1/accounts \</div>
+                          <div class="line">-X GET</div>
+                        </div>
+                      </td>
                     </tr>
                     <tr>
                       <td class="active"><strong>Response code</strong></td>
@@ -264,7 +249,104 @@
                     </tr>
                     <tr>
                       <td class="active"><strong>Response body</strong></td>
-                      <td>{ "error":"auth_key is missing" }</td>
+                      <td>
+                        <div class="json">
+                          <div>JSON: {</div>
+                          <div class="line">"error" : "auth_key is missing"</div>
+                          <div>}</div>
+                        </div>
+                      </td>
+                    </tr>
+                  </table>
+                </div>
+              </dd>
+            </dl>
+          </div>
+        </div>
+
+        <div class="resource-content hidden" id="resource-restaurants-id">
+          <h3>/v1/restaurants/:id</h3>
+          <hr/>
+          <div class="row">
+            <dl class="dl-horizontal">
+              <dt>Restaurants</dt>
+              <dd>
+
+                <!-- GET /v1/restaurants/:id SUCCESS -->
+
+                <div class="panel panel-success">
+                  <div class="panel-heading">
+                    <h3 class="panel-title">Valid request</h3>
+                  </div>
+                  <table class="table table-bordered">
+                    <tr>
+                      <td class="active"><strong>Verb</strong></td>
+                      <td>GET</td>
+                    </tr>
+                    <tr>
+                      <td class="active"><strong>Request</strong></td>
+                      <td>
+                        <div class="curl">
+                          <div>curl https://api.eatabit.io/v1/restaurants \</div>
+                          <div class="line">-d "auth_key=6s3AcHtv4Eja2ZkEhtPo4w" \</div>
+                          <div class="line">-d "id=1" \</div>
+                          <div class="line">-X GET</div>
+                        </div>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td class="active"><strong>Response code</strong></td>
+                      <td>200</td>
+                    </tr>
+                    <tr>
+                      <td class="active"><strong>Response body</strong></td>
+                      <td>
+                        <div class="json">
+                          <div>JSON: {</div>
+                          <div class="line">"object" : "restaurant",</div>
+                          <div class="line">"id" : "1",</div>
+                          <div class="line">"created" : "2013-11-27T15:26:43Z"</div>
+                          <div>}</div>
+                        </div>
+                      </td>
+                    </tr>
+                  </table>
+                </div>
+
+                <!-- GET /v1/restaurants/:id FAILURE -->
+
+                <div class="panel panel-danger">
+                  <div class="panel-heading">
+                    <h3 class="panel-title">Invalid request</h3>
+                  </div>
+                  <table class="table table-bordered">
+                    <tr>
+                      <td class="active"><strong>Verb</strong></td>
+                      <td>GET</td>
+                    </tr>
+                    <tr>
+                      <td class="active"><strong>Request</strong></td>
+                      <td>
+                        <div class="curl">
+                          <div>curl https://api.eatabit.io/v1/restaurants \</div>
+                          <div class="line">-d "auth_key=6s3AcHtv4Eja2ZkEhtPo4w" \</div>
+                          <div class="line">-X GET</div>
+                        </div>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td class="active"><strong>Response code</strong></td>
+                      <td>400</td>
+                    </tr>
+                    <tr>
+                      <td class="active"><strong>Response body</strong></td>
+                      <td>
+                        <div class="json">
+                          <div>JSON: {</div>
+                          <div class="line">"error" : "id is missing"</div>
+                          <div>}</div>
+                        </div>
+                      </td>
                     </tr>
                   </table>
                 </div>
