@@ -122,7 +122,7 @@
                           <div>JSON: {</div>
                           <div class="line">"object" : "account",</div>
                           <div class="line">"name" : "eatabit.com",</div>
-                          <div class="line">"created":"2013-11-27T15:26:43Z"</div>
+                          <div class="line">"created" : "2013-11-27T15:26:43Z"</div>
                           <div>}</div>
                         </div>
                       </td>
@@ -181,8 +181,14 @@
                       <td>GET</td>
                     </tr>
                     <tr>
-                      <td class="active"><strong>URL</strong></td>
-                      <td>https://api.eatabit.io/v1/accounts?auth_key=A7GB_P3yS9lC2zEH5aO-sA</td>
+                      <td class="active"><strong>Request</strong></td>
+                      <td>
+                        <div class="curl">
+                          <div>curl https://api.eatabit.io/v1/accounts \</div>
+                          <div class="line">-d "auth_key=6s3AcHtv4Eja2ZkEhtPo4w" \</div>
+                          <div class="line">-X GET</div>
+                        </div>
+                      </td>
                     </tr>
                     <tr>
                       <td class="active"><strong>Response code</strong></td>
@@ -195,7 +201,7 @@
                           <div>JSON: {</div>
                           <div class="line">"object" : "account",</div>
                           <div class="line">"name" : "eatabit.com",</div>
-                          <div class="line">"created":"2013-11-27T15:26:43Z"</div>
+                          <div class="line">"created" : "2013-11-27T15:26:43Z"</div>
                           <div>}</div>
                         </div>
                       </td>
@@ -272,17 +278,8 @@
           <hr/>
           <div class="row">
             <dl class="dl-horizontal">
-              <dt>API endpoint</dt>
-              <dd>https://api.eatabit.io</dd>
-            </dl>
-          </div>
-          <div class="row">
-            <dl class="dl-horizontal">
-              <dt>Authentication</dt>
+              <dt>Printers</dt>
               <dd>
-                All requests must contain a valid <strong>:auth_key</strong> in the form of an http parameter. Your account has a <strong>DEVELOPMENT</strong>
-                and a <strong>PRODUCTION</strong> key.
-
                 <div class="panel panel-success">
                   <div class="panel-heading">
                     <h3 class="panel-title">Valid request</h3>
@@ -293,32 +290,31 @@
                       <td>GET</td>
                     </tr>
                     <tr>
-                      <td class="active"><strong>URL</strong></td>
-                      <td>https://api.eatabit.io/accounts?auth_key=A7GB_P3yS9lC2zEH5aO-sA</td>
-                    </tr>
-                  </table>
-                </div>
-
-                <div class="panel panel-danger">
-                  <div class="panel-heading">
-                    <h3 class="panel-title">Invalid request</h3>
-                  </div>
-                  <table class="table table-bordered">
-                    <tr>
-                      <td class="active"><strong>Verb</strong></td>
-                      <td>GET</td>
-                    </tr>
-                    <tr>
-                      <td class="active"><strong>URL</strong></td>
-                      <td>https://api.eatabit.io/accounts</td>
+                      <td class="active"><strong>Request</strong></td>
+                      <td>
+                        <div class="curl">
+                          <div>curl https://api.eatabit.io/v1/printers \</div>
+                          <div class="line">-d "auth_key=6s3AcHtv4Eja2ZkEhtPo4w" \</div>
+                          <div class="line">-d "id=1" \</div>
+                          <div class="line">-X GET</div>
+                        </div>
+                      </td>
                     </tr>
                     <tr>
                       <td class="active"><strong>Response code</strong></td>
-                      <td>400</td>
+                      <td>200</td>
                     </tr>
                     <tr>
                       <td class="active"><strong>Response body</strong></td>
-                      <td>{ "error":"auth_key is missing" }</td>
+                      <td>
+                        <div class="json">
+                          <div>JSON: {</div>
+                          <div class="line">"object" : "printer",</div>
+                          <div class="line">"id" : "1",</div>
+                          <div class="line">"created" : "2013-11-27T15:26:43Z"</div>
+                          <div>}</div>
+                        </div>
+                      </td>
                     </tr>
                   </table>
                 </div>
