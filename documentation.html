@@ -58,7 +58,7 @@
         <div class="panel panel-success">
           <div class="panel-heading"><i class="fa fa-gear"></i> Resources</div>
           <ul class="list-group resources">
-            <li class="list-group-item"><a href="#" class="resource-link" data-link="resource-authorization">Authentication</a></li>
+            <li class="list-group-item"><a href="#" class="resource-link" data-link="resource-authentication">Authentication</a></li>
             <li class="list-group-item"><a href="#" class="resource-link" data-link="resource-accounts">/v1/accounts</a></li>
             <li class="list-group-item"><a href="#" class="resource-link" data-link="resource-restaurants-id">/v1/restaurants/:id</a></li>
             <li class="list-group-item"><a href="#" class="resource-link" data-link="resource-printers-id">/v1/printers/:id</a></li>
@@ -70,7 +70,7 @@
       <div class="col-md-1"></div>
       <div class="col-md-8" id="resource-container">
 
-        <div class="resource-content show" id="resource-authorization">
+        <div class="resource-content show" id="resource-authentication">
           <h3>Authentication</h3>
           <hr/>
           <div class="row">
@@ -81,14 +81,20 @@
           </div>
           <div class="row">
             <dl class="dl-horizontal">
+              <dt>SSL</dt>
+              <dd>All requests should be made over HTTPS.</dd>
+            </dl>
+          </div>
+          <div class="row">
+            <dl class="dl-horizontal">
               <dt>Authentication</dt>
               <dd>
                 All requests must contain a valid <strong>:auth_key</strong> in the form of an http parameter. Your account has a <strong>DEVELOPMENT</strong>
                 and a <strong>PRODUCTION</strong> key which are available in your login.
-
+                <br/><br/>
                 <div class="panel panel-success">
                   <div class="panel-heading">
-                    <h3 class="panel-title">Valid request</h3>
+                    <h3 class="panel-title">Valid request (using DEVELOPMENT key)</h3>
                   </div>
                   <table class="table table-bordered">
                     <tr>
@@ -96,8 +102,28 @@
                       <td>GET</td>
                     </tr>
                     <tr>
-                      <td class="active"><strong>URL</strong></td>
-                      <td>https://api.eatabit.io/accounts?auth_key=A7GB_P3yS9lC2zEH5aO-sA</td>
+                      <td class="active"><strong>Request</strong></td>
+                      <td>
+                        <div class="curl">
+                          <div>curl https://api.eatabit.io/v1/accounts \</div>
+                          <div class="line">-d "auth_key=6s3AcHtv4Eja2ZkEhtPo4w" \</div>
+                          <div class="line">-X GET</div>
+                        </div>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td class="active"><strong>Response code</strong></td>
+                      <td>200</td>
+                    </tr>
+                    <tr>
+                      <td class="active"><strong>Response body</strong></td>
+                      <td>
+                        <div class="json">
+                          <div>JSON: {</div>
+                          <div class="line">"name" : "eatabit.com"</div>
+                          <div>}</div>
+                        </div>
+                      </td>
                     </tr>
                   </table>
                 </div>
@@ -121,7 +147,13 @@
                     </tr>
                     <tr>
                       <td class="active"><strong>Response body</strong></td>
-                      <td>{ "error":"auth_key is missing" }</td>
+                      <td>
+                        <div class="json">
+                          <div>JSON: {</div>
+                          <div class="line">"error" : "auth_key is missing"</div>
+                          <div>}</div>
+                        </div>
+                      </td>
                     </tr>
                   </table>
                 </div>
@@ -135,11 +167,8 @@
           <hr/>
           <div class="row">
             <dl class="dl-horizontal">
-              <dt>Authentication</dt>
+              <dt>Accounts</dt>
               <dd>
-                All requests must contain a valid <strong>:auth_key</strong> in the form of an http parameter. Your account has a <strong>DEVELOPMENT</strong>
-                and a <strong>PRODUCTION</strong> key.
-
                 <div class="panel panel-success">
                   <div class="panel-heading">
                     <h3 class="panel-title">Valid request</h3>
@@ -153,29 +182,19 @@
                       <td class="active"><strong>URL</strong></td>
                       <td>https://api.eatabit.io/accounts?auth_key=A7GB_P3yS9lC2zEH5aO-sA</td>
                     </tr>
-                  </table>
-                </div>
-
-                <div class="panel panel-danger">
-                  <div class="panel-heading">
-                    <h3 class="panel-title">Invalid request</h3>
-                  </div>
-                  <table class="table table-bordered">
-                    <tr>
-                      <td class="active"><strong>Verb</strong></td>
-                      <td>GET</td>
-                    </tr>
-                    <tr>
-                      <td class="active"><strong>URL</strong></td>
-                      <td>https://api.eatabit.io/accounts</td>
-                    </tr>
                     <tr>
                       <td class="active"><strong>Response code</strong></td>
-                      <td>400</td>
+                      <td>200</td>
                     </tr>
                     <tr>
                       <td class="active"><strong>Response body</strong></td>
-                      <td>{ "error":"auth_key is missing" }</td>
+                      <td>
+                        <div class="json">
+                          <div>JSON: {</div>
+                          <div class="line">"name" : "eatabit.com"</div>
+                          <div>}</div>
+                        </div>
+                      </td>
                     </tr>
                   </table>
                 </div>

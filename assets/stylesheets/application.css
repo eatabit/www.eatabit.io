@@ -80,13 +80,18 @@ i.featurette-icon {
 /* Documentation
 ------------------------- */
 
-.documentation .resource-content .panel {
+.documentation .resource-content .panel-danger {
   margin-top: 1em;
 }
 
 .documentation .panel table tr:first-child td:first-child {
   width: 130px;
 }
+
+.documentation .json .line, .documentation .curl .line {
+  text-indent: 15px;
+}
+
 
 /* RESPONSIVE CSS
 -------------------------------------------------- */
