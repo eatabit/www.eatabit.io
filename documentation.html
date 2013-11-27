@@ -362,6 +362,9 @@
             <dl class="dl-horizontal">
               <dt>Printers</dt>
               <dd>
+
+                <!-- GET /v1/printers/:id SUCCESS -->
+
                 <div class="panel panel-success">
                   <div class="panel-heading">
                     <h3 class="panel-title">Valid request</h3>
@@ -394,6 +397,44 @@
                           <div class="line">"object" : "printer",</div>
                           <div class="line">"id" : "1",</div>
                           <div class="line">"created" : "2013-11-27T15:26:43Z"</div>
+                          <div>}</div>
+                        </div>
+                      </td>
+                    </tr>
+                  </table>
+                </div>
+
+                <!-- GET /v1/printers/:id FAILURE -->
+
+                <div class="panel panel-danger">
+                  <div class="panel-heading">
+                    <h3 class="panel-title">Invalid request</h3>
+                  </div>
+                  <table class="table table-bordered">
+                    <tr>
+                      <td class="active"><strong>Verb</strong></td>
+                      <td>GET</td>
+                    </tr>
+                    <tr>
+                      <td class="active"><strong>Request</strong></td>
+                      <td>
+                        <div class="curl">
+                          <div>curl https://api.eatabit.io/v1/printers \</div>
+                          <div class="line">-d "auth_key=6s3AcHtv4Eja2ZkEhtPo4w" \</div>
+                          <div class="line">-X GET</div>
+                        </div>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td class="active"><strong>Response code</strong></td>
+                      <td>400</td>
+                    </tr>
+                    <tr>
+                      <td class="active"><strong>Response body</strong></td>
+                      <td>
+                        <div class="json">
+                          <div>JSON: {</div>
+                          <div class="line">"error" : "id is missing"</div>
                           <div>}</div>
                         </div>
                       </td>
