@@ -21,7 +21,7 @@
     <![endif]-->
 
     <!-- Custom styles for this template -->
-    <link href="http://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
+    <link href="assets/stylesheets/font-awesome.css" rel="stylesheet">
     <link href="assets/stylesheets/application.css" rel="stylesheet">
   </head>
 <!-- NAVBAR
@@ -93,7 +93,7 @@
                 and a <strong>PRODUCTION</strong> key which are available in your login.
                 <br/><br/>
 
-                <!-- GET /v1/accounts SUCCESS -->
+                <!-- Authentication SUCCESS -->
 
 
                 <div class="panel panel-success">
@@ -134,7 +134,7 @@
                   </table>
                 </div>
 
-                <!-- GET /v1/accounts FAILURE -->
+                <!-- Authentiction FAILURE -->
 
                 <div class="panel panel-danger">
                   <div class="panel-heading">
@@ -180,7 +180,7 @@
           <hr/>
           <div class="row">
             <dl class="dl-horizontal">
-              <dt>Accounts</dt>
+              <dt>READ Account</dt>
               <dd>
 
                 <!-- GET /v1/accounts SUCCESS -->
@@ -269,7 +269,7 @@
           <hr/>
           <div class="row">
             <dl class="dl-horizontal">
-              <dt>Restaurants</dt>
+              <dt>READ Restaurant</dt>
               <dd>
 
                 <!-- GET /v1/restaurants/:id SUCCESS -->
@@ -305,6 +305,7 @@
                           <div>JSON: {</div>
                           <div class="line">"object" : "restaurant",</div>
                           <div class="line">"id" : "1",</div>
+                          <div class="line">"name" : "Bill's Pizza",</div>
                           <div class="line">"created" : "2013-11-27T15:26:43Z"</div>
                           <div>}</div>
                         </div>
@@ -360,7 +361,7 @@
           <hr/>
           <div class="row">
             <dl class="dl-horizontal">
-              <dt>Printers</dt>
+              <dt>READ Printer</dt>
               <dd>
 
                 <!-- GET /v1/printers/:id SUCCESS -->
@@ -454,16 +455,10 @@
           <hr/>
           <div class="row">
             <dl class="dl-horizontal">
-              <dt>API endpoint</dt>
-              <dd>https://api.eatabit.io</dd>
-            </dl>
-          </div>
-          <div class="row">
-            <dl class="dl-horizontal">
-              <dt>Authentication</dt>
+              <dt>CREATE Order</dt>
               <dd>
-                All requests must contain a valid <strong>:auth_key</strong> in the form of an http parameter. Your account has a <strong>DEVELOPMENT</strong>
-                and a <strong>PRODUCTION</strong> key.
+
+                <!-- POST /v1/orders SUCCESS -->
 
                 <div class="panel panel-success">
                   <div class="panel-heading">
@@ -472,35 +467,77 @@
                   <table class="table table-bordered">
                     <tr>
                       <td class="active"><strong>Verb</strong></td>
-                      <td>GET</td>
+                      <td>POST</td>
                     </tr>
                     <tr>
-                      <td class="active"><strong>URL</strong></td>
-                      <td>https://api.eatabit.io/accounts?auth_key=A7GB_P3yS9lC2zEH5aO-sA</td>
+                      <td class="active"><strong>Request</strong></td>
+                      <td>
+                        <div class="curl">
+                          <div>curl https://api.eatabit.io/v1/orders \</div>
+                          <div class="line">-d "auth_key=6s3AcHtv4Eja2ZkEhtPo4w" \</div>
+                          <div class="line">-d "restaurant_id=1" \</div>
+                          <div class="line">-X POST</div>
+                        </div>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td class="active"><strong>Response code</strong></td>
+                      <td>200</td>
+                    </tr>
+                    <tr>
+                      <td class="active"><strong>Response body</strong></td>
+                      <td>
+                        <div class="json">
+                          <div>JSON: {</div>
+                          <div class="line">"object" : "printer",</div>
+                          <div class="line">"id" : "1",</div>
+                          <div class="line">"enabled" : true,</div>
+                          <div class="line">"pickup_minutes" : 15,</div>
+                          <div class="line">"delivery_minutes" : 30,</div>
+                          <div class="line">"created" : "2013-11-27T15:26:43Z"</div>
+                          <div>}</div>
+                        </div>
+                      </td>
                     </tr>
                   </table>
                 </div>
 
-                <div class="panel panel-danger">
+                <!-- POST /v1/orders PARAMS -->
+
+                <div class="panel panel-info">
                   <div class="panel-heading">
-                    <h3 class="panel-title">Invalid request</h3>
+                    <h3 class="panel-title">Parameters</h3>
                   </div>
                   <table class="table table-bordered">
                     <tr>
-                      <td class="active"><strong>Verb</strong></td>
-                      <td>GET</td>
+                      <td class="active"><strong>auth_key</strong></td>
+                      <td>
+                        <table class="table table-bordered">
+                          <tr>
+                            <td><strong>Required:</strong></td>
+                            <td>Yes</td>
+                          </tr>
+                          <tr>
+                            <td><strong>Type:</strong></td>
+                            <td>String</td>
+                          </tr>
+                        </table>
+                      </td>
                     </tr>
                     <tr>
-                      <td class="active"><strong>URL</strong></td>
-                      <td>https://api.eatabit.io/accounts</td>
-                    </tr>
-                    <tr>
-                      <td class="active"><strong>Response code</strong></td>
-                      <td>400</td>
-                    </tr>
-                    <tr>
-                      <td class="active"><strong>Response body</strong></td>
-                      <td>{ "error":"auth_key is missing" }</td>
+                      <td class="active"><strong>resturant_id</strong></td>
+                      <td>
+                        <table class="table table-bordered">
+                          <tr>
+                            <td><strong>Required:</strong></td>
+                            <td>Yes</td>
+                          </tr>
+                          <tr>
+                            <td><strong>Type:</strong></td>
+                            <td>Integer</td>
+                          </tr>
+                        </table>
+                      </td>
                     </tr>
                   </table>
                 </div>
@@ -560,7 +597,7 @@
                     </tr>
                     <tr>
                       <td class="active"><strong>Response body</strong></td>
-                      <td>{ "error":"auth_key is missing" }</td>
+                      <td>{ "error" : "auth_key is missing" }</td>
                     </tr>
                   </table>
                 </div>
@@ -580,7 +617,7 @@
     <!-- Bootstrap core JavaScript
     ================================================== -->
     <!-- Placed at the end of the document so the pages load faster -->
-    <script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
+    <script src="assets/javascript/jquery-1.10.2.min.js"></script>
     <script src="assets/javascript/bootstrap.min.js"></script>
     <script src="assets/javascript/application.js"></script>
   </body>
