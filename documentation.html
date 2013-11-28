@@ -489,9 +489,8 @@
                       <td>
                         <div class="json">
                           <div>JSON: {</div>
-                          <div class="line">"object" : "printer",</div>
+                          <div class="line">"object" : "order",</div>
                           <div class="line">"id" : "1",</div>
-                          <div class="line">"enabled" : true,</div>
                           <div class="line">"pickup_minutes" : 15,</div>
                           <div class="line">"delivery_minutes" : 30,</div>
                           <div class="line">"created" : "2013-11-27T15:26:43Z"</div>
@@ -502,16 +501,16 @@
                   </table>
                 </div>
 
-                <!-- POST /v1/orders PARAMS -->
+                <!-- POST /v1/orders REQUEST PARAMS -->
 
                 <div class="panel panel-info">
                   <div class="panel-heading">
-                    <h3 class="panel-title">Parameters</h3>
+                    <h3 class="panel-title">Request parameters</h3>
                   </div>
                   <table class="table table-bordered">
                     <tr>
                       <td class="active"><strong>auth_key</strong></td>
-                      <td>
+                      <td class="value">
                         <table class="table table-bordered">
                           <tr>
                             <td><strong>Required:</strong></td>
@@ -526,7 +525,7 @@
                     </tr>
                     <tr>
                       <td class="active"><strong>resturant_id</strong></td>
-                      <td>
+                      <td class="value">
                         <table class="table table-bordered">
                           <tr>
                             <td><strong>Required:</strong></td>
@@ -535,6 +534,50 @@
                           <tr>
                             <td><strong>Type:</strong></td>
                             <td>Integer</td>
+                          </tr>
+                        </table>
+                      </td>
+                    </tr>
+                  </table>
+                </div>
+
+                <!-- POST /v1/orders Response PARAMS -->
+
+                <div class="panel panel-info">
+                  <div class="panel-heading">
+                    <h3 class="panel-title">Response parameters</h3>
+                  </div>
+                  <table class="table table-bordered">
+                    <tr>
+                      <td class="active"><strong>object</strong></td>
+                      <td class="value">
+                        <table class="table table-bordered">
+                          <tr>
+                            <td><strong>Type:</strong></td>
+                            <td>String</td>
+                          </tr>
+                          <tr>
+                            <td><strong>Value:</strong></td>
+                            <td>"order"</td>
+                          </tr>
+                          <tr>
+                            <td><strong>Description:</strong></td>
+                            <td>The class of the returned object. Provided for object/action verification convenience.</td>
+                          </tr>
+                        </table>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td class="active"><strong>id</strong></td>
+                      <td class="value">
+                        <table class="table table-bordered">
+                          <tr>
+                            <td><strong>Type:</strong></td>
+                            <td>Integer</td>
+                          </tr>
+                          <tr>
+                            <td><strong>Description:</strong></td>
+                            <td>The internal ID asigned to the Order object. Can be used to refer to the object in GET requests.</td>
                           </tr>
                         </table>
                       </td>

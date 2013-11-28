@@ -92,16 +92,16 @@ i.featurette-icon {
   text-indent: 15px;
 }
 
-.documentation .dl-horizontal {
-  margin: 0;
-}
-
 .documentation .panel-info table {
   margin: 0;
 }
 
 .documentation .panel-info table td:first-child {
   width: 100px;
+}
+
+.documentation .panel-info td.value {
+  padding: 0;
 }
 
 /* RESPONSIVE CSS
