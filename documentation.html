@@ -482,7 +482,7 @@
                           <div>curl https://api.eatabit.io/v1/orders.json \</div>
                           <div class="line">-X POST \</div>
                           <div class="line">-H "Content-Type: application/json" \</div>
-                          <div class="line">-d '{"auth_key": "6s3AcHtv4Eja2ZkEhtPo4w", "restaurant_id": "1", "items": "One large pepperoni pizza|One dozen hot wings|Two bottles of water"}'</div>
+                          <div class="line">-d '{"auth_key": "6s3AcHtv4Eja2ZkEhtPo4w", "restaurant_id": "1", "items": "One large pepperoni pizza|One dozen hot wings|Two bottles of water", "fulfillment": "pickup"}'</div>
                         </div>
                       </td>
                     </tr>
@@ -500,6 +500,7 @@
                           <div class="line">"pickup_minutes" : 15,</div>
                           <div class="line">"delivery_minutes" : 30,</div>
                           <div class="line">"items" : "One large pepperoni pizza|One dozen hot wings|Two bottles of water",</div>
+                          <div class="line">"fulfillment" : "pickup",</div>
                           <div class="line">"created" : "2013-11-27T15:26:43Z"</div>
                           <div>}</div>
                         </div>
@@ -568,6 +569,29 @@
                           <tr>
                             <td><strong>Description:</strong></td>
                             <td>A string containing the order items. If a pipe ('|') delimited list is supplied, an ordered list will be printed on the receipt.</td>
+                          </tr>
+                        </table>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td class="active"><strong>fulfillment</strong></td>
+                      <td class="value">
+                        <table class="table table-bordered">
+                          <tr>
+                            <td><strong>Required:</strong></td>
+                            <td>Yes</td>
+                          </tr>
+                          <tr>
+                            <td><strong>Type:</strong></td>
+                            <td>String</td>
+                          </tr>
+                          <tr>
+                            <td><strong>Values:</strong></td>
+                            <td>'pickup', 'delivery'</td>
+                          </tr>
+                          <tr>
+                            <td><strong>Description:</strong></td>
+                            <td>A string specifying whether the order is pickup or delivery.</td>
                           </tr>
                         </table>
                       </td>
@@ -657,6 +681,21 @@
                           <tr>
                             <td><strong>Description:</strong></td>
                             <td>The value of the items attribute.</td>
+                          </tr>
+                        </table>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td class="active"><strong>fulfillment</strong></td>
+                      <td class="value">
+                        <table class="table table-bordered">
+                          <tr>
+                            <td><strong>Type:</strong></td>
+                            <td>String</td>
+                          </tr>
+                          <tr>
+                            <td><strong>Description:</strong></td>
+                            <td>A string specifying whether the order is pickup or delivery.</td>
                           </tr>
                         </table>
                       </td>
