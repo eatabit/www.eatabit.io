@@ -178,7 +178,7 @@
         </div>
 
         <div class="resource-content hidden" id="resource-accounts">
-          <h3>/v1/accounts</h3>
+          <h3>/v1/accounts.json</h3>
           <hr/>
           <div class="row">
             <dl class="dl-horizontal">
@@ -269,7 +269,7 @@
         </div>
 
         <div class="resource-content hidden" id="resource-restaurants-id">
-          <h3>/v1/restaurants/:id</h3>
+          <h3>/v1/restaurants/:id.json</h3>
           <hr/>
           <div class="row">
             <dl class="dl-horizontal">
@@ -362,7 +362,7 @@
         </div>
 
         <div class="resource-content hidden" id="resource-printers-id">
-          <h3>/v1/printers/:id</h3>
+          <h3>/v1/printers/:id.json</h3>
           <hr/>
           <div class="row">
             <dl class="dl-horizontal">
@@ -457,7 +457,7 @@
         </div>
 
         <div class="resource-content hidden" id="resource-orders">
-          <h3>/v1/orders</h3>
+          <h3>/v1/orders.json</h3>
           <hr/>
           <div class="row">
             <dl class="dl-horizontal">
@@ -482,7 +482,7 @@
                           <div>curl https://api.eatabit.io/v1/orders.json \</div>
                           <div class="line">-X POST \</div>
                           <div class="line">-H "Content-Type: application/json" \</div>
-                          <div class="line">-d '{"auth_key": "6s3AcHtv4Eja2ZkEhtPo4w", "restaurant_id": "1", "items": "One large pepperoni pizza|One dozen hot wings|Two bottles of water", "fulfillment": "pickup", "prepaid": true, "payment": "credit"}'</div>
+                          <div class="line">-d '{"auth_key": "6s3AcHtv4Eja2ZkEhtPo4w", "external_id": 9999, "restaurant_id": "1", "items": "One large pepperoni pizza|One dozen hot wings|Two bottles of water", "fulfillment": "pickup", "prepaid": true, "payment": "credit"}'</div>
                         </div>
                       </td>
                     </tr>
@@ -496,7 +496,8 @@
                         <div class="json">
                           <div>JSON: {</div>
                           <div class="line">"object" : "order",</div>
-                          <div class="line">"id" : "1",</div>
+                          <div class="line">"internal_id" : "1",</div>
+                          <div class="line">"external_id" : "9999",</div>
                           <div class="line">"pickup_minutes" : 15,</div>
                           <div class="line">"delivery_minutes" : 30,</div>
                           <div class="line">"items" : "One large pepperoni pizza|One dozen hot wings|Two bottles of water",</div>
@@ -533,6 +534,25 @@
                           <tr>
                             <td><strong>Description:</strong></td>
                             <td>Your account's PRODUCTION or DEVELOPMENT key.</td>
+                          </tr>
+                        </table>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td class="active"><strong>external_id</strong></td>
+                      <td class="value">
+                        <table class="table table-bordered">
+                          <tr>
+                            <td><strong>Required:</strong></td>
+                            <td>Yes</td>
+                          </tr>
+                          <tr>
+                            <td><strong>Type:</strong></td>
+                            <td>Integer</td>
+                          </tr>
+                          <tr>
+                            <td><strong>Description:</strong></td>
+                            <td>The client's internal ID for the order object. It can be used for order lookup once the record is persisted.</td>
                           </tr>
                         </table>
                       </td>
@@ -674,7 +694,7 @@
                       </td>
                     </tr>
                     <tr>
-                      <td class="active"><strong>id</strong></td>
+                      <td class="active"><strong>internal_id</strong></td>
                       <td class="value">
                         <table class="table table-bordered">
                           <tr>
@@ -683,7 +703,22 @@
                           </tr>
                           <tr>
                             <td><strong>Description:</strong></td>
-                            <td>The internal ID asigned to the Order object. Can be used to refer to the object in GET requests.</td>
+                            <td>The API's internal ID for the order object. It can be used for order lookup once the record is persisted.</td>
+                          </tr>
+                        </table>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td class="active"><strong>external_id</strong></td>
+                      <td class="value">
+                        <table class="table table-bordered">
+                          <tr>
+                            <td><strong>Type:</strong></td>
+                            <td>Integer</td>
+                          </tr>
+                          <tr>
+                            <td><strong>Description:</strong></td>
+                            <td>The client's internal ID for the order object. It can be used for order lookup once the record is persisted.</td>
                           </tr>
                         </table>
                       </td>
