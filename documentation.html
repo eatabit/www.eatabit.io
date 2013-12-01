@@ -234,9 +234,129 @@
                           <div class="line">"object" : "restaurant",</div>
                           <div class="line">"id" : "1",</div>
                           <div class="line">"name" : "Bill's Pizza",</div>
+                          <div class="line">"premise_phone_number" : "+15551234567",</div>
                           <div class="line">"created" : "2013-11-27T15:26:43Z"</div>
                           <div>}</div>
                         </div>
+                      </td>
+                    </tr>
+                  </table>
+                </div>
+
+
+                <!-- POST /v1/restaurants/:id REQUEST PARAMS -->
+
+                <div class="panel panel-info">
+                  <div class="panel-heading">
+                    <h3 class="panel-title">Request parameters</h3>
+                  </div>
+                  <table class="table table-bordered">
+                    <tr>
+                      <td class="active"><strong>auth_key</strong></td>
+                      <td class="value">
+                        <table class="table table-bordered">
+                          <tr>
+                            <td><strong>Required:</strong></td>
+                            <td>Yes</td>
+                          </tr>
+                          <tr>
+                            <td><strong>Type:</strong></td>
+                            <td>String</td>
+                          </tr>
+                          <tr>
+                            <td><strong>Description:</strong></td>
+                            <td>Your account's PRODUCTION or DEVELOPMENT key.</td>
+                          </tr>
+                        </table>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td class="active"><strong>id</strong></td>
+                      <td class="value">
+                        <table class="table table-bordered">
+                          <tr>
+                            <td><strong>Required:</strong></td>
+                            <td>Yes</td>
+                          </tr>
+                          <tr>
+                            <td><strong>Type:</strong></td>
+                            <td>Integer</td>
+                          </tr>
+                          <tr>
+                            <td><strong>Description:</strong></td>
+                            <td>The eatabit.io internal id of the restaurant object.</td>
+                          </tr>
+                        </table>
+                      </td>
+                    </tr>
+                  </table>
+                </div>
+
+                <!-- POST /v1/restaurants/:id Response PARAMS -->
+
+                <div class="panel panel-info">
+                  <div class="panel-heading">
+                    <h3 class="panel-title">Response parameters</h3>
+                  </div>
+                  <table class="table table-bordered">
+                    <tr>
+                      <td class="active"><strong>id</strong></td>
+                      <td class="value">
+                        <table class="table table-bordered">
+                          <tr>
+                            <td><strong>Type:</strong></td>
+                            <td>String</td>
+                          </tr>
+                          <tr>
+                            <td><strong>Description:</strong></td>
+                            <td>The eatabit.io internal id of the restaurant object.</td>
+                          </tr>
+                        </table>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td class="active"><strong>name</strong></td>
+                      <td class="value">
+                        <table class="table table-bordered">
+                          <tr>
+                            <td><strong>Type:</strong></td>
+                            <td>String</td>
+                          </tr>
+                          <tr>
+                            <td><strong>Description:</strong></td>
+                            <td>The name of the restaurant.</td>
+                          </tr>
+                        </table>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td class="active"><strong>premise_phone_number</strong></td>
+                      <td class="value">
+                        <table class="table table-bordered">
+                          <tr>
+                            <td><strong>Type:</strong></td>
+                            <td>String</td>
+                          </tr>
+                          <tr>
+                            <td><strong>Description:</strong></td>
+                            <td>The phone number of the restaurant in E.164 format.</td>
+                          </tr>
+                        </table>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td class="active"><strong>created</strong></td>
+                      <td class="value">
+                        <table class="table table-bordered">
+                          <tr>
+                            <td><strong>Type:</strong></td>
+                            <td>Timestamp</td>
+                          </tr>
+                          <tr>
+                            <td><strong>Description:</strong></td>
+                            <td>The UTC time that the record was created. Timestamps are in iso8601 format.</td>
+                          </tr>
+                        </table>
                       </td>
                     </tr>
                   </table>
