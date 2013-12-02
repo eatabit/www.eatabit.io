@@ -89,8 +89,7 @@
             <dl class="dl-horizontal">
               <dt>Authentication</dt>
               <dd>
-                All requests must contain a valid <strong>:auth_key</strong> in the form of an http parameter. Your account has a <strong>DEVELOPMENT</strong>
-                and a <strong>PRODUCTION</strong> key which are available in your login.
+                All requests are authenticated with HTTP Basic auth. The username is your account id and the password is your key. You can supply a DEVELOPMENT or PRODUCTION key.
                 <br/><br/>
 
                 <!-- Authentication SUCCESS -->
@@ -111,7 +110,7 @@
                         <div class="curl">
                           <div>curl https://api.eatabit.io/v1/accounts.json \</div>
                           <div class="line">-X GET \</div>
-                          <div class="line">-d 'auth_key=6s3AcHtv4Eja2ZkEhtPo4w'</div>
+                          <div class="line">-u 1:6s3AcHtv4Eja2ZkEhtPo4w</div>
                         </div>
                       </td>
                     </tr>
@@ -164,7 +163,7 @@
                         <div class="curl">
                           <div>curl https://api.eatabit.io/v1/accounts.json \</div>
                           <div class="line">-X GET \</div>
-                          <div class="line">-d 'auth_key=6s3AcHtv4Eja2ZkEhtPo4w'</div>
+                          <div class="line">-u 1:6s3AcHtv4Eja2ZkEhtPo4w</div>
                         </div>
                       </td>
                     </tr>
@@ -217,7 +216,7 @@
                         <div class="curl">
                           <div>curl https://api.eatabit.io/v1/restaurants.json \</div>
                           <div class="line">-X GET \</div>
-                          <div class="line">-d 'auth_key=6s3AcHtv4Eja2ZkEhtPo4w' \</div>
+                          <div class="line">-u 1:6s3AcHtv4Eja2ZkEhtPo4w \</div>
                           <div class="line">-d 'id=1'</div>
                         </div>
                       </td>
@@ -391,7 +390,7 @@
                         <div class="curl">
                           <div>curl https://api.eatabit.io/v1/printers.json \</div>
                           <div class="line">-X GET \</div>
-                          <div class="line">-d 'auth_key=6s3AcHtv4Eja2ZkEhtPo4w' \</div>
+                          <div class="line">-u 1:6s3AcHtv4Eja2ZkEhtPo4w \</div>
                           <div class="line">-d 'id=1'</div>
                         </div>
                       </td>
@@ -447,7 +446,8 @@
                         <div class="curl">
                           <div>curl https://api.eatabit.io/v1/orders.json \</div>
                           <div class="line">-X POST \</div>
-                          <div class="line">-d '{"auth_key": "6s3AcHtv4Eja2ZkEhtPo4w", "external_id": 9999, "restaurant_id": "1", "items": "One large pepperoni pizza|One dozen hot wings|Two bottles of water", "fulfillment": "pickup", "prepaid": true, "payment": "credit"}'</div>
+                          <div class="line">-u 1:6s3AcHtv4Eja2ZkEhtPo4w \</div>
+                          <div class="line">-d '{"external_id": 9999, "restaurant_id": "1", "items": "One large pepperoni pizza|One dozen hot wings|Two bottles of water", "fulfillment": "pickup", "prepaid": true, "payment": "credit"}'</div>
                         </div>
                       </td>
                     </tr>
@@ -484,25 +484,6 @@
                     <h3 class="panel-title">Request parameters</h3>
                   </div>
                   <table class="table table-bordered">
-                    <tr>
-                      <td class="active"><strong>auth_key</strong></td>
-                      <td class="value">
-                        <table class="table table-bordered">
-                          <tr>
-                            <td><strong>Required:</strong></td>
-                            <td>Yes</td>
-                          </tr>
-                          <tr>
-                            <td><strong>Type:</strong></td>
-                            <td>String</td>
-                          </tr>
-                          <tr>
-                            <td><strong>Description:</strong></td>
-                            <td>Your account's PRODUCTION or DEVELOPMENT key.</td>
-                          </tr>
-                        </table>
-                      </td>
-                    </tr>
                     <tr>
                       <td class="active"><strong>external_id</strong></td>
                       <td class="value">
