@@ -330,7 +330,7 @@
               </table>
             </div>
 
-            <!-- POST /v1/account/:id/restaurant/:id REQUEST PARAMS -->
+            <!-- POST /v1/account/:id/restaurant/:id ROUTE PARAMS -->
 
             <div class="panel panel-info">
               <div class="panel-heading">
@@ -443,10 +443,12 @@
         </div>
 
         <div class="resource-content hidden" id="resource-orders">
-          <h3>Order: CREATE</h3>
+          <h3>Order CREATE</h3>
+          <h4>/v1/account/:id/restaurant/:restaurant_id/orders</h4>
           <hr/>
           <div class="row">
-            <!-- POST /v1/orders SUCCESS -->
+
+            <!-- POST /v1/account/:id/restaurant/:id/orders SUCCESS -->
 
             <div class="panel panel-success">
               <div class="panel-heading">
@@ -461,22 +463,15 @@
                   <td class="active"><strong>Request</strong></td>
                   <td>
                     <div class="curl">
-                      <div>curl https://api.eatabit.io/v1/accounts/6s3AcHtv4Eja2ZkEhtPo4w/orders.json \</div>
+                      <div>curl https://api.eatabit.io/v1/account/1/restaurant/15551234567/orders \</div>
                       <div class="line">-X POST \</div>
                       <div class="line">-u 1:6s3AcHtv4Eja2ZkEhtPo4w \</div>
                       <div class="line">-d '{ \
-                        <div class="line">"restaurant": { \
-                          <div class="line">"id": "+15551234567" \</div>
-                        </div>
-                        <div class="line">}, \</div>
-                        <div class="line">"order": { \
-                          <div class="line">"external_id": 9999, \</div>
-                          <div class="line">"items": "One large pepperoni pizza|One dozen hot wings", \</div>
-                          <div class="line">"fulfillment": "pickup", \</div>
-                          <div class="line">"prepaid": true, \</div>
-                          <div class="line">"payment": "credit" \</div>
-                        </div>
-                        <div class="line">}'</div>
+                        <div class="line">"external_id": "9999", \</div>
+                        <div class="line">"items": "One large pepperoni pizza|One dozen hot wings", \</div>
+                        <div class="line">"fulfillment": "pickup", \</div>
+                        <div class="line">"prepaid": true, \</div>
+                        <div class="line">"payment": "credit" \</div>
                       </div>
                       <div class="line">}'</div>
                     </div>
@@ -492,8 +487,7 @@
                     <div class="json">
                       <div>JSON: {</div>
                       <div class="line">"object" : "order",</div>
-                      <div class="line">"internal_id" : 1,</div>
-                      <div class="line">"external_id" : 9999,</div>
+                      <div class="line">"external_id" : "9999",</div>
                       <div class="line">"pickup_minutes" : 15,</div>
                       <div class="line">"delivery_minutes" : 30,</div>
                       <div class="line">"items" : "One large pepperoni pizza|One dozen hot wings",</div>
@@ -508,32 +502,53 @@
               </table>
             </div>
 
-            <!-- POST /v1/orders REQUEST PARAMS -->
+            <!-- POST /v1/account/:id/restaurant/:id/orders ROUTE PARAMS -->
+
+            <div class="panel panel-info">
+              <div class="panel-heading">
+                <h3 class="panel-title">Request route parameters</h3>
+              </div>
+              <table class="table table-bordered">
+                <tr>
+                  <td class="active"><strong>id</strong></td>
+                  <td class="value">
+                    <table class="table table-bordered">
+                      <tr>
+                        <td><strong>Position:</strong></td>
+                        <td>/v1/account/<strong>:id</strong>/restaurant/15551234567/orders</td>
+                      </tr>
+                      <tr>
+                        <td><strong>Description:</strong></td>
+                        <td>The id of your eatabit.io account. This is the same integer as is passed as <strong>USER</strong> in the request <strong>HTTP BASIC AUTH.</strong></td>
+                      </tr>
+                    </table>
+                  </td>
+                </tr>
+                <tr>
+                  <td class="active"><strong>:restaurant_id</strong></td>
+                  <td class="value">
+                    <table class="table table-bordered">
+                      <tr>
+                        <td><strong>Position:</strong></td>
+                        <td>/v1/account/1/restaurant/<strong>:restaurant_id</strong>/orders</td>
+                      </tr>
+                      <tr>
+                        <td><strong>Description:</strong></td>
+                        <td>The restaurant premise phone number in <a href="https://en.wikipedia.org/wiki/E.164">E.164</a> format, without the leading '+'.</td>
+                      </tr>
+                    </table>
+                  </td>
+                </tr>
+              </table>
+            </div>
+
+            <!-- POST /v1/account/:id/restaurant/:id/orders REQUEST PARAMS -->
 
             <div class="panel panel-info">
               <div class="panel-heading">
                 <h3 class="panel-title">Request parameters</h3>
               </div>
               <table class="table table-bordered">
-                <tr>
-                  <td class="active"><strong>resturant_id</strong></td>
-                  <td class="value">
-                    <table class="table table-bordered">
-                      <tr>
-                        <td><strong>Required:</strong></td>
-                        <td>Yes</td>
-                      </tr>
-                      <tr>
-                        <td><strong>Type:</strong></td>
-                        <td>String</td>
-                      </tr>
-                      <tr>
-                        <td><strong>Description:</strong></td>
-                        <td>The restaurant_id is the premise phone number of the restaurant in <a href="https://en.wikipedia.org/wiki/E.164">E.164</a> format. The premise phone number is the main, published </td>
-                      </tr>
-                    </table>
-                  </td>
-                </tr>
                 <tr>
                   <td class="active"><strong>external_id</strong></td>
                   <td class="value">
@@ -544,7 +559,7 @@
                       </tr>
                       <tr>
                         <td><strong>Type:</strong></td>
-                        <td>Integer</td>
+                        <td>String</td>
                       </tr>
                       <tr>
                         <td><strong>Description:</strong></td>
@@ -644,7 +659,7 @@
               </table>
             </div>
 
-            <!-- POST /v1/orders Response PARAMS -->
+            <!-- POST /v1/account/:id/restaurant/:id/orders Response PARAMS -->
 
             <div class="panel panel-info">
               <div class="panel-heading">
@@ -671,31 +686,16 @@
                   </td>
                 </tr>
                 <tr>
-                  <td class="active"><strong>internal_id</strong></td>
-                  <td class="value">
-                    <table class="table table-bordered">
-                      <tr>
-                        <td><strong>Type:</strong></td>
-                        <td>Integer</td>
-                      </tr>
-                      <tr>
-                        <td><strong>Description:</strong></td>
-                        <td>The API's internal ID for the order object. It can be used for order lookup once the record is persisted.</td>
-                      </tr>
-                    </table>
-                  </td>
-                </tr>
-                <tr>
                   <td class="active"><strong>external_id</strong></td>
                   <td class="value">
                     <table class="table table-bordered">
                       <tr>
                         <td><strong>Type:</strong></td>
-                        <td>Integer</td>
+                        <td>String</td>
                       </tr>
                       <tr>
                         <td><strong>Description:</strong></td>
-                        <td>The client's internal ID for the order object. It can be used for order lookup once the record is persisted.</td>
+                        <td>The client's internal ID for the order object. It is used for order lookup once the record is persisted.</td>
                       </tr>
                     </table>
                   </td>
