@@ -59,11 +59,10 @@
           <div class="panel-heading"><i class="fa fa-gear"></i> Resources</div>
           <ul class="list-group resources">
             <li class="list-group-item"><a href="#" class="resource-link" data-link="resource-authentication">Authentication</a></li>
-            <li class="list-group-item"><a href="#" class="resource-link" data-link="resource-accounts">/v1/accounts</a></li>
-            <li class="list-group-item"><a href="#" class="resource-link" data-link="resource-restaurants-id">/v1/restaurants/:id</a></li>
-            <li class="list-group-item"><a href="#" class="resource-link" data-link="resource-printers-id">/v1/printers/:id</a></li>
-            <li class="list-group-item"><a href="#" class="resource-link" data-link="resource-orders">/v1/orders</a></li>
-            <li class="list-group-item"><a href="#" class="resource-link" data-link="resource-orders-id">/v1/orders/:id</a></li>
+            <li class="list-group-item"><a href="#" class="resource-link" data-link="resource-accounts">Account READ</a></li>
+            <li class="list-group-item"><a href="#" class="resource-link" data-link="resource-restaurants-id">Restaurant READ</a></li>
+            <li class="list-group-item"><a href="#" class="resource-link" data-link="resource-orders">Order CREATE</a></li>
+            <li class="list-group-item"><a href="#" class="resource-link" data-link="resource-orders-id"> Order READ</a></li>
           </ul>
         </div>
       </div>
@@ -90,51 +89,51 @@
               <dt>Authentication</dt>
               <dd>
                 All requests are authenticated with HTTP Basic auth. The username is your account id and the password is your key. You can supply a DEVELOPMENT or PRODUCTION key.
-                <br/><br/>
-
-                <!-- Authentication SUCCESS -->
-
-
-                <div class="panel panel-success">
-                  <div class="panel-heading">
-                    <h3 class="panel-title">Valid request</h3>
-                  </div>
-                  <table class="table table-bordered">
-                    <tr>
-                      <td class="active"><strong>Verb</strong></td>
-                      <td>GET</td>
-                    </tr>
-                    <tr>
-                      <td class="active"><strong>Request</strong></td>
-                      <td>
-                        <div class="curl">
-                          <div>curl https://api.eatabit.io/v1/accounts.json \</div>
-                          <div class="line">-X GET \</div>
-                          <div class="line">-u 1:6s3AcHtv4Eja2ZkEhtPo4w</div>
-                        </div>
-                      </td>
-                    </tr>
-                    <tr>
-                      <td class="active"><strong>Response code</strong></td>
-                      <td>200</td>
-                    </tr>
-                    <tr>
-                      <td class="active"><strong>Response body</strong></td>
-                      <td>
-                        <div class="json">
-                          <div>JSON: {</div>
-                          <div class="line">"object" : "account",</div>
-                          <div class="line">"name" : "eatabit.com",</div>
-                          <div class="line">"support_phone_number" : "+15551234567",</div>
-                          <div class="line">"created" : "2013-11-27T15:26:43Z"</div>
-                          <div>}</div>
-                        </div>
-                      </td>
-                    </tr>
-                  </table>
-                </div>
               </dd>
             </dl>
+          </div>
+          <div class="row">
+
+            <!-- Authentication SUCCESS -->
+
+            <div class="panel panel-success">
+              <div class="panel-heading">
+                <h3 class="panel-title">Valid request</h3>
+              </div>
+              <table class="table table-bordered">
+                <tr>
+                  <td class="active"><strong>Verb</strong></td>
+                  <td>GET</td>
+                </tr>
+                <tr>
+                  <td class="active"><strong>Request</strong></td>
+                  <td>
+                    <div class="curl">
+                      <div>curl https://api.eatabit.io/v1/accounts/1 \</div>
+                      <div class="line">-X GET \</div>
+                      <div class="line">-u 1:6s3AcHtv4Eja2ZkEhtPo4w</div>
+                    </div>
+                  </td>
+                </tr>
+                <tr>
+                  <td class="active"><strong>Response code</strong></td>
+                  <td>200</td>
+                </tr>
+                <tr>
+                  <td class="active"><strong>Response body</strong></td>
+                  <td>
+                    <div class="json">
+                      <div>JSON: {</div>
+                      <div class="line">"object" : "account",</div>
+                      <div class="line">"name" : "eatabit.com",</div>
+                      <div class="line">"support_phone_number" : "+15551234567",</div>
+                      <div class="line">"created" : "2013-11-27T15:26:43Z"</div>
+                      <div>}</div>
+                    </div>
+                  </td>
+                </tr>
+              </table>
+            </div>
           </div>
         </div>
 
@@ -146,7 +145,7 @@
               <dt>READ Account</dt>
               <dd>
 
-                <!-- GET /v1/accounts SUCCESS -->
+                <!-- GET /v1/accounts/:id.json SUCCESS -->
 
                 <div class="panel panel-success">
                   <div class="panel-heading">
@@ -199,7 +198,7 @@
               <dt>READ Restaurant</dt>
               <dd>
 
-                <!-- GET /v1/restaurants/:id SUCCESS -->
+                <!-- GET /v1/accounts/:id/restaurants/:id SUCCESS -->
 
                 <div class="panel panel-success">
                   <div class="panel-heading">
@@ -214,10 +213,9 @@
                       <td class="active"><strong>Request</strong></td>
                       <td>
                         <div class="curl">
-                          <div>curl https://api.eatabit.io/v1/restaurants.json \</div>
+                          <div>curl https://api.eatabit.io/v1/restaurants/15551234567.json \</div>
                           <div class="line">-X GET \</div>
                           <div class="line">-u 1:6s3AcHtv4Eja2ZkEhtPo4w \</div>
-                          <div class="line">-d 'id=1'</div>
                         </div>
                       </td>
                     </tr>
@@ -231,7 +229,7 @@
                         <div class="json">
                           <div>JSON: {</div>
                           <div class="line">"object" : "restaurant",</div>
-                          <div class="line">"id" : "1",</div>
+                          <div class="line">"id" : "15551234567",</div>
                           <div class="line">"name" : "Bill's Pizza",</div>
                           <div class="line">"premise_phone_number" : "+15551234567",</div>
                           <div class="line">"created" : "2013-11-27T15:26:43Z"</div>
@@ -241,7 +239,6 @@
                     </tr>
                   </table>
                 </div>
-
 
                 <!-- POST /v1/restaurants/:id REQUEST PARAMS -->
 
@@ -365,419 +362,371 @@
           </div>
         </div>
 
-        <div class="resource-content hidden" id="resource-printers-id">
-          <h3>/v1/printers/:id.json</h3>
-          <hr/>
-          <div class="row">
-            <dl class="dl-horizontal">
-              <dt>READ Printer</dt>
-              <dd>
-
-                <!-- GET /v1/printers/:id SUCCESS -->
-
-                <div class="panel panel-success">
-                  <div class="panel-heading">
-                    <h3 class="panel-title">Valid request</h3>
-                  </div>
-                  <table class="table table-bordered">
-                    <tr>
-                      <td class="active"><strong>Verb</strong></td>
-                      <td>GET</td>
-                    </tr>
-                    <tr>
-                      <td class="active"><strong>Request</strong></td>
-                      <td>
-                        <div class="curl">
-                          <div>curl https://api.eatabit.io/v1/printers.json \</div>
-                          <div class="line">-X GET \</div>
-                          <div class="line">-u 1:6s3AcHtv4Eja2ZkEhtPo4w \</div>
-                          <div class="line">-d 'id=1'</div>
-                        </div>
-                      </td>
-                    </tr>
-                    <tr>
-                      <td class="active"><strong>Response code</strong></td>
-                      <td>200</td>
-                    </tr>
-                    <tr>
-                      <td class="active"><strong>Response body</strong></td>
-                      <td>
-                        <div class="json">
-                          <div>JSON: {</div>
-                          <div class="line">"object" : "printer",</div>
-                          <div class="line">"id" : "1",</div>
-                          <div class="line">"enabled" : true,</div>
-                          <div class="line">"pickup_minutes" : 15,</div>
-                          <div class="line">"delivery_minutes" : 30,</div>
-                          <div class="line">"created" : "2013-11-27T15:26:43Z"</div>
-                          <div>}</div>
-                        </div>
-                      </td>
-                    </tr>
-                  </table>
-                </div>
-              </dd>
-            </dl>
-          </div>
-        </div>
-
         <div class="resource-content hidden" id="resource-orders">
-          <h3>/v1/orders.json</h3>
+          <h3>Order: CREATE</h3>
           <hr/>
           <div class="row">
-            <dl class="dl-horizontal">
-              <dt>CREATE Order</dt>
-              <dd>
+            <!-- POST /v1/orders SUCCESS -->
 
-                <!-- POST /v1/orders SUCCESS -->
-
-                <div class="panel panel-success">
-                  <div class="panel-heading">
-                    <h3 class="panel-title">Valid request</h3>
-                  </div>
-                  <table class="table table-bordered">
-                    <tr>
-                      <td class="active"><strong>Verb</strong></td>
-                      <td>POST</td>
-                    </tr>
-                    <tr>
-                      <td class="active"><strong>Request</strong></td>
-                      <td>
-                        <div class="curl">
-                          <div>curl https://api.eatabit.io/v1/orders.json \</div>
-                          <div class="line">-X POST \</div>
-                          <div class="line">-u 1:6s3AcHtv4Eja2ZkEhtPo4w \</div>
-                          <div class="line">-d '{"external_id": 9999, "restaurant_id": "1", "items": "One large pepperoni pizza|One dozen hot wings|Two bottles of water", "fulfillment": "pickup", "prepaid": true, "payment": "credit"}'</div>
+            <div class="panel panel-success">
+              <div class="panel-heading">
+                <h3 class="panel-title">Valid request</h3>
+              </div>
+              <table class="table table-bordered">
+                <tr>
+                  <td class="active"><strong>Verb</strong></td>
+                  <td>POST</td>
+                </tr>
+                <tr>
+                  <td class="active"><strong>Request</strong></td>
+                  <td>
+                    <div class="curl">
+                      <div>curl https://api.eatabit.io/v1/accounts/6s3AcHtv4Eja2ZkEhtPo4w/orders.json \</div>
+                      <div class="line">-X POST \</div>
+                      <div class="line">-u 1:6s3AcHtv4Eja2ZkEhtPo4w \</div>
+                      <div class="line">-d '{ \
+                        <div class="line">"restaurant": { \
+                          <div class="line">"id": "+15551234567" \</div>
                         </div>
-                      </td>
-                    </tr>
-                    <tr>
-                      <td class="active"><strong>Response code</strong></td>
-                      <td>200</td>
-                    </tr>
-                    <tr>
-                      <td class="active"><strong>Response body</strong></td>
-                      <td>
-                        <div class="json">
-                          <div>JSON: {</div>
-                          <div class="line">"object" : "order",</div>
-                          <div class="line">"internal_id" : 1,</div>
-                          <div class="line">"external_id" : 9999,</div>
-                          <div class="line">"pickup_minutes" : 15,</div>
-                          <div class="line">"delivery_minutes" : 30,</div>
-                          <div class="line">"items" : "One large pepperoni pizza|One dozen hot wings|Two bottles of water",</div>
-                          <div class="line">"fulfillment" : "pickup",</div>
-                          <div class="line">"prepaid" : true,</div>
-                          <div class="line">"payment" : "credit",</div>
-                          <div class="line">"created" : "2013-11-27T15:26:43Z"</div>
-                          <div>}</div>
+                        <div class="line">}, \</div>
+                        <div class="line">"order": { \
+                          <div class="line">"external_id": 9999, \</div>
+                          <div class="line">"items": "One large pepperoni pizza|One dozen hot wings", \</div>
+                          <div class="line">"fulfillment": "pickup", \</div>
+                          <div class="line">"prepaid": true, \</div>
+                          <div class="line">"payment": "credit" \</div>
                         </div>
-                      </td>
-                    </tr>
-                  </table>
-                </div>
+                        <div class="line">}'</div>
+                      </div>
+                      <div class="line">}'</div>
+                    </div>
+                  </td>
+                </tr>
+                <tr>
+                  <td class="active"><strong>Response code</strong></td>
+                  <td>200</td>
+                </tr>
+                <tr>
+                  <td class="active"><strong>Response body</strong></td>
+                  <td>
+                    <div class="json">
+                      <div>JSON: {</div>
+                      <div class="line">"object" : "order",</div>
+                      <div class="line">"internal_id" : 1,</div>
+                      <div class="line">"external_id" : 9999,</div>
+                      <div class="line">"pickup_minutes" : 15,</div>
+                      <div class="line">"delivery_minutes" : 30,</div>
+                      <div class="line">"items" : "One large pepperoni pizza|One dozen hot wings",</div>
+                      <div class="line">"fulfillment" : "pickup",</div>
+                      <div class="line">"prepaid" : true,</div>
+                      <div class="line">"payment" : "credit",</div>
+                      <div class="line">"created" : "2013-11-27T15:26:43Z"</div>
+                      <div>}</div>
+                    </div>
+                  </td>
+                </tr>
+              </table>
+            </div>
 
-                <!-- POST /v1/orders REQUEST PARAMS -->
+            <!-- POST /v1/orders REQUEST PARAMS -->
 
-                <div class="panel panel-info">
-                  <div class="panel-heading">
-                    <h3 class="panel-title">Request parameters</h3>
-                  </div>
-                  <table class="table table-bordered">
-                    <tr>
-                      <td class="active"><strong>external_id</strong></td>
-                      <td class="value">
-                        <table class="table table-bordered">
-                          <tr>
-                            <td><strong>Required:</strong></td>
-                            <td>Yes</td>
-                          </tr>
-                          <tr>
-                            <td><strong>Type:</strong></td>
-                            <td>Integer</td>
-                          </tr>
-                          <tr>
-                            <td><strong>Description:</strong></td>
-                            <td>The client's internal ID for the order object. It can be used for order lookup once the record is persisted.</td>
-                          </tr>
-                        </table>
-                      </td>
-                    </tr>
-                    <tr>
-                      <td class="active"><strong>resturant_id</strong></td>
-                      <td class="value">
-                        <table class="table table-bordered">
-                          <tr>
-                            <td><strong>Required:</strong></td>
-                            <td>Yes</td>
-                          </tr>
-                          <tr>
-                            <td><strong>Type:</strong></td>
-                            <td>Integer</td>
-                          </tr>
-                          <tr>
-                            <td><strong>Description:</strong></td>
-                            <td>The eatabit.io internal ID of the restaurant.</td>
-                          </tr>
-                        </table>
-                      </td>
-                    </tr>
-                    <tr>
-                      <td class="active"><strong>items</strong></td>
-                      <td class="value">
-                        <table class="table table-bordered">
-                          <tr>
-                            <td><strong>Required:</strong></td>
-                            <td>Yes</td>
-                          </tr>
-                          <tr>
-                            <td><strong>Type:</strong></td>
-                            <td>String</td>
-                          </tr>
-                          <tr>
-                            <td><strong>Description:</strong></td>
-                            <td>A string containing the order items. If a pipe ('|') delimited list is supplied, an ordered list will be printed on the receipt.</td>
-                          </tr>
-                        </table>
-                      </td>
-                    </tr>
-                    <tr>
-                      <td class="active"><strong>fulfillment</strong></td>
-                      <td class="value">
-                        <table class="table table-bordered">
-                          <tr>
-                            <td><strong>Required:</strong></td>
-                            <td>Yes</td>
-                          </tr>
-                          <tr>
-                            <td><strong>Type:</strong></td>
-                            <td>String</td>
-                          </tr>
-                          <tr>
-                            <td><strong>Values:</strong></td>
-                            <td>'pickup', 'delivery'</td>
-                          </tr>
-                          <tr>
-                            <td><strong>Description:</strong></td>
-                            <td>A string specifying whether the order is pickup or delivery.</td>
-                          </tr>
-                        </table>
-                      </td>
-                    </tr>
-                    <tr>
-                      <td class="active"><strong>prepaid</strong></td>
-                      <td class="value">
-                        <table class="table table-bordered">
-                          <tr>
-                            <td><strong>Required:</strong></td>
-                            <td>Yes</td>
-                          </tr>
-                          <tr>
-                            <td><strong>Type:</strong></td>
-                            <td>Boolean</td>
-                          </tr>
-                          <tr>
-                            <td><strong>Values:</strong></td>
-                            <td>true, false</td>
-                          </tr>
-                          <tr>
-                            <td><strong>Description:</strong></td>
-                            <td>A boolean specifying whether the order prepaid.</td>
-                          </tr>
-                        </table>
-                      </td>
-                    </tr>
-                    <tr>
-                      <td class="active"><strong>payment</strong></td>
-                      <td class="value">
-                        <table class="table table-bordered">
-                          <tr>
-                            <td><strong>Required:</strong></td>
-                            <td>Yes</td>
-                          </tr>
-                          <tr>
-                            <td><strong>Type:</strong></td>
-                            <td>String</td>
-                          </tr>
-                          <tr>
-                            <td><strong>Values:</strong></td>
-                            <td>cash, credit</td>
-                          </tr>
-                          <tr>
-                            <td><strong>Description:</strong></td>
-                            <td>A string specifying whether the order payment type is cash or credit.</td>
-                          </tr>
-                        </table>
-                      </td>
-                    </tr>
-                  </table>
-                </div>
+            <div class="panel panel-info">
+              <div class="panel-heading">
+                <h3 class="panel-title">Request parameters</h3>
+              </div>
+              <table class="table table-bordered">
+                <tr>
+                  <td class="active"><strong>resturant_id</strong></td>
+                  <td class="value">
+                    <table class="table table-bordered">
+                      <tr>
+                        <td><strong>Required:</strong></td>
+                        <td>Yes</td>
+                      </tr>
+                      <tr>
+                        <td><strong>Type:</strong></td>
+                        <td>String</td>
+                      </tr>
+                      <tr>
+                        <td><strong>Description:</strong></td>
+                        <td>The restaurant_id is the premise phone number of the restaurant in E.164 format. The premise phone number is the main, published </td>
+                      </tr>
+                    </table>
+                  </td>
+                </tr>
+                <tr>
+                  <td class="active"><strong>external_id</strong></td>
+                  <td class="value">
+                    <table class="table table-bordered">
+                      <tr>
+                        <td><strong>Required:</strong></td>
+                        <td>Yes</td>
+                      </tr>
+                      <tr>
+                        <td><strong>Type:</strong></td>
+                        <td>Integer</td>
+                      </tr>
+                      <tr>
+                        <td><strong>Description:</strong></td>
+                        <td>The client's internal ID for the order object. It can be used for order lookup once the record is persisted.</td>
+                      </tr>
+                    </table>
+                  </td>
+                </tr>
+                <tr>
+                  <td class="active"><strong>items</strong></td>
+                  <td class="value">
+                    <table class="table table-bordered">
+                      <tr>
+                        <td><strong>Required:</strong></td>
+                        <td>Yes</td>
+                      </tr>
+                      <tr>
+                        <td><strong>Type:</strong></td>
+                        <td>String</td>
+                      </tr>
+                      <tr>
+                        <td><strong>Description:</strong></td>
+                        <td>A string containing the order items. If a pipe ('|') delimited list is supplied, an ordered list will be printed on the receipt.</td>
+                      </tr>
+                    </table>
+                  </td>
+                </tr>
+                <tr>
+                  <td class="active"><strong>fulfillment</strong></td>
+                  <td class="value">
+                    <table class="table table-bordered">
+                      <tr>
+                        <td><strong>Required:</strong></td>
+                        <td>Yes</td>
+                      </tr>
+                      <tr>
+                        <td><strong>Type:</strong></td>
+                        <td>String</td>
+                      </tr>
+                      <tr>
+                        <td><strong>Values:</strong></td>
+                        <td>'pickup', 'delivery'</td>
+                      </tr>
+                      <tr>
+                        <td><strong>Description:</strong></td>
+                        <td>A string specifying whether the order is pickup or delivery.</td>
+                      </tr>
+                    </table>
+                  </td>
+                </tr>
+                <tr>
+                  <td class="active"><strong>prepaid</strong></td>
+                  <td class="value">
+                    <table class="table table-bordered">
+                      <tr>
+                        <td><strong>Required:</strong></td>
+                        <td>Yes</td>
+                      </tr>
+                      <tr>
+                        <td><strong>Type:</strong></td>
+                        <td>Boolean</td>
+                      </tr>
+                      <tr>
+                        <td><strong>Values:</strong></td>
+                        <td>true, false</td>
+                      </tr>
+                      <tr>
+                        <td><strong>Description:</strong></td>
+                        <td>A boolean specifying whether the order prepaid.</td>
+                      </tr>
+                    </table>
+                  </td>
+                </tr>
+                <tr>
+                  <td class="active"><strong>payment</strong></td>
+                  <td class="value">
+                    <table class="table table-bordered">
+                      <tr>
+                        <td><strong>Required:</strong></td>
+                        <td>Yes</td>
+                      </tr>
+                      <tr>
+                        <td><strong>Type:</strong></td>
+                        <td>String</td>
+                      </tr>
+                      <tr>
+                        <td><strong>Values:</strong></td>
+                        <td>cash, credit</td>
+                      </tr>
+                      <tr>
+                        <td><strong>Description:</strong></td>
+                        <td>A string specifying whether the order payment type is cash or credit.</td>
+                      </tr>
+                    </table>
+                  </td>
+                </tr>
+              </table>
+            </div>
 
-                <!-- POST /v1/orders Response PARAMS -->
+            <!-- POST /v1/orders Response PARAMS -->
 
-                <div class="panel panel-info">
-                  <div class="panel-heading">
-                    <h3 class="panel-title">Response parameters</h3>
-                  </div>
-                  <table class="table table-bordered">
-                    <tr>
-                      <td class="active"><strong>object</strong></td>
-                      <td class="value">
-                        <table class="table table-bordered">
-                          <tr>
-                            <td><strong>Type:</strong></td>
-                            <td>String</td>
-                          </tr>
-                          <tr>
-                            <td><strong>Value:</strong></td>
-                            <td>"order"</td>
-                          </tr>
-                          <tr>
-                            <td><strong>Description:</strong></td>
-                            <td>The class of the returned object. Provided for object/action verification convenience.</td>
-                          </tr>
-                        </table>
-                      </td>
-                    </tr>
-                    <tr>
-                      <td class="active"><strong>internal_id</strong></td>
-                      <td class="value">
-                        <table class="table table-bordered">
-                          <tr>
-                            <td><strong>Type:</strong></td>
-                            <td>Integer</td>
-                          </tr>
-                          <tr>
-                            <td><strong>Description:</strong></td>
-                            <td>The API's internal ID for the order object. It can be used for order lookup once the record is persisted.</td>
-                          </tr>
-                        </table>
-                      </td>
-                    </tr>
-                    <tr>
-                      <td class="active"><strong>external_id</strong></td>
-                      <td class="value">
-                        <table class="table table-bordered">
-                          <tr>
-                            <td><strong>Type:</strong></td>
-                            <td>Integer</td>
-                          </tr>
-                          <tr>
-                            <td><strong>Description:</strong></td>
-                            <td>The client's internal ID for the order object. It can be used for order lookup once the record is persisted.</td>
-                          </tr>
-                        </table>
-                      </td>
-                    </tr>
-                    <tr>
-                      <td class="active"><strong>pickup_minutes</strong></td>
-                      <td class="value">
-                        <table class="table table-bordered">
-                          <tr>
-                            <td><strong>Type:</strong></td>
-                            <td>Integer</td>
-                          </tr>
-                          <tr>
-                            <td><strong>Description:</strong></td>
-                            <td>The restaurant's current pickup time in minutes.</td>
-                          </tr>
-                        </table>
-                      </td>
-                    </tr>
-                    <tr>
-                      <td class="active"><strong>delivery_minutes</strong></td>
-                      <td class="value">
-                        <table class="table table-bordered">
-                          <tr>
-                            <td><strong>Type:</strong></td>
-                            <td>Integer</td>
-                          </tr>
-                          <tr>
-                            <td><strong>Description:</strong></td>
-                            <td>The restaurant's current delivery time in minutes.</td>
-                          </tr>
-                        </table>
-                      </td>
-                    </tr>
-                    <tr>
-                      <td class="active"><strong>items</strong></td>
-                      <td class="value">
-                        <table class="table table-bordered">
-                          <tr>
-                            <td><strong>Type:</strong></td>
-                            <td>String</td>
-                          </tr>
-                          <tr>
-                            <td><strong>Description:</strong></td>
-                            <td>The value of the items attribute.</td>
-                          </tr>
-                        </table>
-                      </td>
-                    </tr>
-                    <tr>
-                      <td class="active"><strong>fulfillment</strong></td>
-                      <td class="value">
-                        <table class="table table-bordered">
-                          <tr>
-                            <td><strong>Type:</strong></td>
-                            <td>String</td>
-                          </tr>
-                          <tr>
-                            <td><strong>Description:</strong></td>
-                            <td>A string specifying whether the order is pickup or delivery.</td>
-                          </tr>
-                        </table>
-                      </td>
-                    </tr>
-                    <tr>
-                      <td class="active"><strong>prepaid</strong></td>
-                      <td class="value">
-                        <table class="table table-bordered">
-                          <tr>
-                            <td><strong>Type:</strong></td>
-                            <td>Boolean</td>
-                          </tr>
-                          <tr>
-                            <td><strong>Description:</strong></td>
-                            <td>A boolean specifying whether the order prepaid.</td>
-                          </tr>
-                        </table>
-                      </td>
-                    </tr>
-                    <tr>
-                      <td class="active"><strong>payment</strong></td>
-                      <td class="value">
-                        <table class="table table-bordered">
-                          <tr>
-                            <td><strong>Type:</strong></td>
-                            <td>String</td>
-                          </tr>
-                          <tr>
-                            <td><strong>Description:</strong></td>
-                            <td>A string specifying whether the order payment type is cash or credit.</td>
-                          </tr>
-                        </table>
-                      </td>
-                    </tr>
-                    <tr>
-                      <td class="active"><strong>created</strong></td>
-                      <td class="value">
-                        <table class="table table-bordered">
-                          <tr>
-                            <td><strong>Type:</strong></td>
-                            <td>Timestamp</td>
-                          </tr>
-                          <tr>
-                            <td><strong>Description:</strong></td>
-                            <td>The UTC time that the record was created. Timestamps are in iso8601 format.</td>
-                          </tr>
-                        </table>
-                      </td>
-                    </tr>
-                  </table>
-                </div>
-              </dd>
-            </dl>
+            <div class="panel panel-info">
+              <div class="panel-heading">
+                <h3 class="panel-title">Response parameters</h3>
+              </div>
+              <table class="table table-bordered">
+                <tr>
+                  <td class="active"><strong>object</strong></td>
+                  <td class="value">
+                    <table class="table table-bordered">
+                      <tr>
+                        <td><strong>Type:</strong></td>
+                        <td>String</td>
+                      </tr>
+                      <tr>
+                        <td><strong>Value:</strong></td>
+                        <td>"order"</td>
+                      </tr>
+                      <tr>
+                        <td><strong>Description:</strong></td>
+                        <td>The class of the returned object. Provided for object/action verification convenience.</td>
+                      </tr>
+                    </table>
+                  </td>
+                </tr>
+                <tr>
+                  <td class="active"><strong>internal_id</strong></td>
+                  <td class="value">
+                    <table class="table table-bordered">
+                      <tr>
+                        <td><strong>Type:</strong></td>
+                        <td>Integer</td>
+                      </tr>
+                      <tr>
+                        <td><strong>Description:</strong></td>
+                        <td>The API's internal ID for the order object. It can be used for order lookup once the record is persisted.</td>
+                      </tr>
+                    </table>
+                  </td>
+                </tr>
+                <tr>
+                  <td class="active"><strong>external_id</strong></td>
+                  <td class="value">
+                    <table class="table table-bordered">
+                      <tr>
+                        <td><strong>Type:</strong></td>
+                        <td>Integer</td>
+                      </tr>
+                      <tr>
+                        <td><strong>Description:</strong></td>
+                        <td>The client's internal ID for the order object. It can be used for order lookup once the record is persisted.</td>
+                      </tr>
+                    </table>
+                  </td>
+                </tr>
+                <tr>
+                  <td class="active"><strong>pickup_minutes</strong></td>
+                  <td class="value">
+                    <table class="table table-bordered">
+                      <tr>
+                        <td><strong>Type:</strong></td>
+                        <td>Integer</td>
+                      </tr>
+                      <tr>
+                        <td><strong>Description:</strong></td>
+                        <td>The restaurant's current pickup time in minutes.</td>
+                      </tr>
+                    </table>
+                  </td>
+                </tr>
+                <tr>
+                  <td class="active"><strong>delivery_minutes</strong></td>
+                  <td class="value">
+                    <table class="table table-bordered">
+                      <tr>
+                        <td><strong>Type:</strong></td>
+                        <td>Integer</td>
+                      </tr>
+                      <tr>
+                        <td><strong>Description:</strong></td>
+                        <td>The restaurant's current delivery time in minutes.</td>
+                      </tr>
+                    </table>
+                  </td>
+                </tr>
+                <tr>
+                  <td class="active"><strong>items</strong></td>
+                  <td class="value">
+                    <table class="table table-bordered">
+                      <tr>
+                        <td><strong>Type:</strong></td>
+                        <td>String</td>
+                      </tr>
+                      <tr>
+                        <td><strong>Description:</strong></td>
+                        <td>The value of the items attribute.</td>
+                      </tr>
+                    </table>
+                  </td>
+                </tr>
+                <tr>
+                  <td class="active"><strong>fulfillment</strong></td>
+                  <td class="value">
+                    <table class="table table-bordered">
+                      <tr>
+                        <td><strong>Type:</strong></td>
+                        <td>String</td>
+                      </tr>
+                      <tr>
+                        <td><strong>Description:</strong></td>
+                        <td>A string specifying whether the order is pickup or delivery.</td>
+                      </tr>
+                    </table>
+                  </td>
+                </tr>
+                <tr>
+                  <td class="active"><strong>prepaid</strong></td>
+                  <td class="value">
+                    <table class="table table-bordered">
+                      <tr>
+                        <td><strong>Type:</strong></td>
+                        <td>Boolean</td>
+                      </tr>
+                      <tr>
+                        <td><strong>Description:</strong></td>
+                        <td>A boolean specifying whether the order prepaid.</td>
+                      </tr>
+                    </table>
+                  </td>
+                </tr>
+                <tr>
+                  <td class="active"><strong>payment</strong></td>
+                  <td class="value">
+                    <table class="table table-bordered">
+                      <tr>
+                        <td><strong>Type:</strong></td>
+                        <td>String</td>
+                      </tr>
+                      <tr>
+                        <td><strong>Description:</strong></td>
+                        <td>A string specifying whether the order payment type is cash or credit.</td>
+                      </tr>
+                    </table>
+                  </td>
+                </tr>
+                <tr>
+                  <td class="active"><strong>created</strong></td>
+                  <td class="value">
+                    <table class="table table-bordered">
+                      <tr>
+                        <td><strong>Type:</strong></td>
+                        <td>Timestamp</td>
+                      </tr>
+                      <tr>
+                        <td><strong>Description:</strong></td>
+                        <td>The UTC time that the record was created. Timestamps are in iso8601 format.</td>
+                      </tr>
+                    </table>
+                  </td>
+                </tr>
+              </table>
+            </div>
           </div>
         </div>
 

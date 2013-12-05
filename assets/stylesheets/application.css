@@ -88,8 +88,8 @@ i.featurette-icon {
   width: 130px;
 }
 
-.documentation .json .line, .documentation .curl .line {
-  text-indent: 15px;
+.documentation .line, .documentation .line .line {
+  margin-left: 15px;
 }
 
 .documentation .panel-info table {
