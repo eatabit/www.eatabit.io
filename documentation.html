@@ -139,11 +139,11 @@
 
         <div class="resource-content hidden" id="resource-accounts">
           <h3>Account READ</h3>
-          <h4>/v1/account/:id</h4>
+          <h4>/v1/account/:account_id</h4>
           <hr/>
           <div class="row">
 
-            <!-- GET /v1/account/:id SUCCESS -->
+            <!-- GET /v1/account/:account_id SUCCESS -->
 
             <div class="panel panel-success">
               <div class="panel-heading">
@@ -158,7 +158,7 @@
                   <td class="active"><strong>Request</strong></td>
                   <td>
                     <div class="curl">
-                      <div>curl https://api.eatabit.io/v1/accounts/1 \</div>
+                      <div>curl https://api.eatabit.io/v1/account/1 \</div>
                       <div class="line">-X GET \</div>
                       <div class="line">-u 1:6s3AcHtv4Eja2ZkEhtPo4w</div>
                     </div>
@@ -185,7 +185,7 @@
               </table>
             </div>
 
-            <!-- GET /v1/account/:id REQUEST PARAMS -->
+            <!-- GET /v1/account/:account_id REQUEST PARAMS -->
 
             <div class="panel panel-info">
               <div class="panel-heading">
@@ -193,12 +193,12 @@
               </div>
               <table class="table table-bordered">
                 <tr>
-                  <td class="active"><strong>:id</strong></td>
+                  <td class="active"><strong>:account_id</strong></td>
                   <td class="value">
                     <table class="table table-bordered">
                       <tr>
                         <td><strong>Position:</strong></td>
-                        <td>/v1/account/<strong>:id</strong></td>
+                        <td>/v1/account/<strong>:account_id</strong></td>
                       </tr>
                       <tr>
                         <td><strong>Description:</strong></td>
@@ -210,7 +210,7 @@
               </table>
             </div>
 
-            <!-- GET /v1/account/:id Response PARAMS -->
+            <!-- GET /v1/account/:account_id Response PARAMS -->
 
             <div class="panel panel-info">
               <div class="panel-heading">
@@ -284,11 +284,11 @@
 
         <div class="resource-content hidden" id="resource-restaurants-id">
           <h3>Restaurant READ</h3>
-          <h4>/v1/account/:id/restaurant/:restaurant_id</h4>
+          <h4>/v1/account/:account_id/restaurant/:restaurant_id</h4>
           <hr/>
           <div class="row">
 
-            <!-- GET /v1/account/:id/restaurant/:id SUCCESS -->
+            <!-- GET /v1/account/:account_id/restaurant/:restaurant_id SUCCESS -->
 
             <div class="panel panel-success">
               <div class="panel-heading">
@@ -330,7 +330,7 @@
               </table>
             </div>
 
-            <!-- POST /v1/account/:id/restaurant/:id ROUTE PARAMS -->
+            <!-- POST /v1/account/:account_id/restaurant/:restaurant_id ROUTE PARAMS -->
 
             <div class="panel panel-info">
               <div class="panel-heading">
@@ -338,12 +338,12 @@
               </div>
               <table class="table table-bordered">
                 <tr>
-                  <td class="active"><strong>id</strong></td>
+                  <td class="active"><strong>:account_id</strong></td>
                   <td class="value">
                     <table class="table table-bordered">
                       <tr>
                         <td><strong>Position:</strong></td>
-                        <td>/v1/account/<strong>:id</strong>/restaurant/15551234567</td>
+                        <td>/v1/account/<strong>:account_id</strong>/restaurant/15551234567</td>
                       </tr>
                       <tr>
                         <td><strong>Description:</strong></td>
@@ -370,7 +370,7 @@
               </table>
             </div>
 
-            <!-- POST /v1/account/:id/restaurant/:id Response PARAMS -->
+            <!-- POST /v1/account/:account_id/restaurant/:restaurant_id Response PARAMS -->
 
             <div class="panel panel-info">
               <div class="panel-heading">
@@ -444,11 +444,11 @@
 
         <div class="resource-content hidden" id="resource-orders">
           <h3>Order CREATE</h3>
-          <h4>/v1/account/:id/restaurant/:restaurant_id/orders</h4>
+          <h4>/v1/account/:account_id/restaurant/:restaurant_id/orders</h4>
           <hr/>
           <div class="row">
 
-            <!-- POST /v1/account/:id/restaurant/:id/orders SUCCESS -->
+            <!-- POST /v1/account/:account_id/restaurant/:restaurant_id/orders SUCCESS -->
 
             <div class="panel panel-success">
               <div class="panel-heading">
@@ -466,14 +466,11 @@
                       <div>curl https://api.eatabit.io/v1/account/1/restaurant/15551234567/orders \</div>
                       <div class="line">-X POST \</div>
                       <div class="line">-u 1:6s3AcHtv4Eja2ZkEhtPo4w \</div>
-                      <div class="line">-d '{ \
-                        <div class="line">"external_id": "9999", \</div>
-                        <div class="line">"items": "One large pepperoni pizza|One dozen hot wings", \</div>
-                        <div class="line">"fulfillment": "pickup", \</div>
-                        <div class="line">"prepaid": true, \</div>
-                        <div class="line">"payment": "credit" \</div>
-                      </div>
-                      <div class="line">}'</div>
+                      <div class="line">-H 'application/x-www-form-urlencoded'</div>
+                      <div class="line">-d 'items=One%20large%20pepperoni%20pizza%7COne%20dozen%20hot%20wings' \</div>
+                      <div class="line">-d 'fulfillment=pickup' \</div>
+                      <div class="line">-d 'prepaid=true' \</div>
+                      <div class="line">-d 'payment=credit'</div>
                     </div>
                   </td>
                 </tr>
@@ -487,7 +484,7 @@
                     <div class="json">
                       <div>JSON: {</div>
                       <div class="line">"object" : "order",</div>
-                      <div class="line">"external_id" : "9999",</div>
+                      <div class="line">"id" : 1,</div>
                       <div class="line">"pickup_minutes" : 15,</div>
                       <div class="line">"delivery_minutes" : 30,</div>
                       <div class="line">"items" : "One large pepperoni pizza|One dozen hot wings",</div>
@@ -502,7 +499,7 @@
               </table>
             </div>
 
-            <!-- POST /v1/account/:id/restaurant/:id/orders ROUTE PARAMS -->
+            <!-- POST /v1/account/:account_id/restaurant/:restaurant_id/orders ROUTE PARAMS -->
 
             <div class="panel panel-info">
               <div class="panel-heading">
@@ -510,12 +507,12 @@
               </div>
               <table class="table table-bordered">
                 <tr>
-                  <td class="active"><strong>id</strong></td>
+                  <td class="active"><strong>:account_id</strong></td>
                   <td class="value">
                     <table class="table table-bordered">
                       <tr>
                         <td><strong>Position:</strong></td>
-                        <td>/v1/account/<strong>:id</strong>/restaurant/15551234567/orders</td>
+                        <td>/v1/account/<strong>:account_id</strong>/restaurant/15551234567/orders</td>
                       </tr>
                       <tr>
                         <td><strong>Description:</strong></td>
@@ -542,7 +539,7 @@
               </table>
             </div>
 
-            <!-- POST /v1/account/:id/restaurant/:id/orders REQUEST PARAMS -->
+            <!-- POST /v1/account/:account_id/restaurant/:restaurant_id/orders REQUEST PARAMS -->
 
             <div class="panel panel-info">
               <div class="panel-heading">
@@ -550,7 +547,7 @@
               </div>
               <table class="table table-bordered">
                 <tr>
-                  <td class="active"><strong>external_id</strong></td>
+                  <td class="active"><strong>id</strong></td>
                   <td class="value">
                     <table class="table table-bordered">
                       <tr>
@@ -559,7 +556,7 @@
                       </tr>
                       <tr>
                         <td><strong>Type:</strong></td>
-                        <td>String</td>
+                        <td>Integer</td>
                       </tr>
                       <tr>
                         <td><strong>Description:</strong></td>
@@ -582,7 +579,7 @@
                       </tr>
                       <tr>
                         <td><strong>Description:</strong></td>
-                        <td>A string containing the order items. If a pipe ('|') delimited list is supplied, an ordered list will be printed on the receipt.</td>
+                        <td>A url-encoded string containing the order items. If a pipe ('|') delimited list is supplied, an ordered list will be printed on the receipt.</td>
                       </tr>
                     </table>
                   </td>
@@ -659,7 +656,7 @@
               </table>
             </div>
 
-            <!-- POST /v1/account/:id/restaurant/:id/orders Response PARAMS -->
+            <!-- POST /v1/account/:account_id/restaurant/:restaurant_id/orders Response PARAMS -->
 
             <div class="panel panel-info">
               <div class="panel-heading">
@@ -695,7 +692,7 @@
                       </tr>
                       <tr>
                         <td><strong>Description:</strong></td>
-                        <td>The client's internal ID for the order object. It is used for order lookup once the record is persisted.</td>
+                        <td>The client's internal id for the order object. It is used for order lookup once the record is persisted.</td>
                       </tr>
                     </table>
                   </td>
@@ -811,62 +808,260 @@
         </div>
 
         <div class="resource-content hidden" id="resource-orders-id">
-          <h3>/v1/orders/:id</h3>
+          <h3>Order READ</h3>
+          <h4>/v1/account/:account_id/restaurant/:restaurant_id/order/:order_id</h4>
           <hr/>
           <div class="row">
-            <dl class="dl-horizontal">
-              <dt>API endpoint</dt>
-              <dd>https://api.eatabit.io</dd>
-            </dl>
-          </div>
-          <div class="row">
-            <dl class="dl-horizontal">
-              <dt>Authentication</dt>
-              <dd>
-                All requests must contain a valid <strong>:auth_key</strong> in the form of an http parameter. Your account has a <strong>DEVELOPMENT</strong>
-                and a <strong>PRODUCTION</strong> key.
 
-                <div class="panel panel-success">
-                  <div class="panel-heading">
-                    <h3 class="panel-title">Valid request</h3>
-                  </div>
-                  <table class="table table-bordered">
-                    <tr>
-                      <td class="active"><strong>Verb</strong></td>
-                      <td>GET</td>
-                    </tr>
-                    <tr>
-                      <td class="active"><strong>URL</strong></td>
-                      <td>https://api.eatabit.io/accounts?auth_key=A7GB_P3yS9lC2zEH5aO-sA</td>
-                    </tr>
-                  </table>
-                </div>
+            <!-- GET /v1/account/:account_id/restaurant/:restaurant_id/order/:order_id SUCCESS -->
 
-                <div class="panel panel-danger">
-                  <div class="panel-heading">
-                    <h3 class="panel-title">Invalid request</h3>
-                  </div>
-                  <table class="table table-bordered">
-                    <tr>
-                      <td class="active"><strong>Verb</strong></td>
-                      <td>GET</td>
-                    </tr>
-                    <tr>
-                      <td class="active"><strong>URL</strong></td>
-                      <td>https://api.eatabit.io/accounts</td>
-                    </tr>
-                    <tr>
-                      <td class="active"><strong>Response code</strong></td>
-                      <td>400</td>
-                    </tr>
-                    <tr>
-                      <td class="active"><strong>Response body</strong></td>
-                      <td>{ "error" : "auth_key is missing" }</td>
-                    </tr>
-                  </table>
-                </div>
-              </dd>
-            </dl>
+            <div class="panel panel-success">
+              <div class="panel-heading">
+                <h3 class="panel-title">Valid request</h3>
+              </div>
+              <table class="table table-bordered">
+                <tr>
+                  <td class="active"><strong>Verb</strong></td>
+                  <td>GET</td>
+                </tr>
+                <tr>
+                  <td class="active"><strong>Request</strong></td>
+                  <td>
+                    <div class="curl">
+                      <div>curl https://api.eatabit.io/v1/account/1/restaurant/15551234567/order/9999 \</div>
+                      <div class="line">-X GET \</div>
+                      <div class="line">-u 1:6s3AcHtv4Eja2ZkEhtPo4w</div>
+                    </div>
+                  </td>
+                </tr>
+                <tr>
+                  <td class="active"><strong>Response code</strong></td>
+                  <td>200</td>
+                </tr>
+                <tr>
+                  <td class="active"><strong>Response body</strong></td>
+                  <td>
+                    <div class="json">
+                      <div>JSON: {</div>
+                      <div class="line">"object" : "order",</div>
+                      <div class="line">"id" : 9999,</div>
+                      <div class="line">"pickup_minutes" : 15,</div>
+                      <div class="line">"delivery_minutes" : 30,</div>
+                      <div class="line">"items" : "One large pepperoni pizza|One dozen hot wings",</div>
+                      <div class="line">"fulfillment" : "pickup",</div>
+                      <div class="line">"prepaid" : true,</div>
+                      <div class="line">"payment" : "credit",</div>
+                      <div class="line">"created" : "2013-11-27T15:26:43Z"</div>
+                      <div>}</div>
+                    </div>
+                  </td>
+                </tr>
+              </table>
+            </div>
+
+            <!-- POST /v1/account/:account_id/restaurant/:restaurant_id/order/:order_id ROUTE PARAMS -->
+
+            <div class="panel panel-info">
+              <div class="panel-heading">
+                <h3 class="panel-title">Request route parameters</h3>
+              </div>
+              <table class="table table-bordered">
+                <tr>
+                  <td class="active"><strong>:account_id</strong></td>
+                  <td class="value">
+                    <table class="table table-bordered">
+                      <tr>
+                        <td><strong>Position:</strong></td>
+                        <td>/v1/account/<strong>:account_id</strong>/restaurant/15551234567/order/1</td>
+                      </tr>
+                      <tr>
+                        <td><strong>Description:</strong></td>
+                        <td>The id of your eatabit.io account. This is the same integer as is passed as <strong>USER</strong> in the request <strong>HTTP BASIC AUTH.</strong></td>
+                      </tr>
+                    </table>
+                  </td>
+                </tr>
+                <tr>
+                  <td class="active"><strong>:restaurant_id</strong></td>
+                  <td class="value">
+                    <table class="table table-bordered">
+                      <tr>
+                        <td><strong>Position:</strong></td>
+                        <td>/v1/account/1/restaurant/<strong>:restaurant_id</strong>/order/1</td>
+                      </tr>
+                      <tr>
+                        <td><strong>Description:</strong></td>
+                        <td>The restaurant premise phone number in <a href="https://en.wikipedia.org/wiki/E.164">E.164</a> format, without the leading '+'.</td>
+                      </tr>
+                    </table>
+                  </td>
+                </tr>
+                <tr>
+                  <td class="active"><strong>:order_id</strong></td>
+                  <td class="value">
+                    <table class="table table-bordered">
+                      <tr>
+                        <td><strong>Position:</strong></td>
+                        <td>/v1/account/1/restaurant/15551234567/order/<strong>:order_id</strong></td>
+                      </tr>
+                      <tr>
+                        <td><strong>Description:</strong></td>
+                        <td>The id of the order that was passed by you during Order creation.</td>
+                      </tr>
+                    </table>
+                  </td>
+                </tr>
+              </table>
+            </div>
+
+            <!-- POST /v1/account/:account_id/restaurant/:restaurant_id/order/:order_id Response PARAMS -->
+
+            <div class="panel panel-info">
+              <div class="panel-heading">
+                <h3 class="panel-title">Response parameters</h3>
+              </div>
+              <table class="table table-bordered">
+                <tr>
+                  <td class="active"><strong>object</strong></td>
+                  <td class="value">
+                    <table class="table table-bordered">
+                      <tr>
+                        <td><strong>Type:</strong></td>
+                        <td>String</td>
+                      </tr>
+                      <tr>
+                        <td><strong>Value:</strong></td>
+                        <td>"order"</td>
+                      </tr>
+                      <tr>
+                        <td><strong>Description:</strong></td>
+                        <td>The class of the returned object. Provided for convenience.</td>
+                      </tr>
+                    </table>
+                  </td>
+                </tr>
+                <tr>
+                  <td class="active"><strong>id</strong></td>
+                  <td class="value">
+                    <table class="table table-bordered">
+                      <tr>
+                        <td><strong>Type:</strong></td>
+                        <td>Integer</td>
+                      </tr>
+                      <tr>
+                        <td><strong>Description:</strong></td>
+                        <td>The eatabit.io id for the persisted object. This id must be used as the :order_id route parameter in READ requests.</td>
+                      </tr>
+                    </table>
+                  </td>
+                </tr>
+                <tr>
+                  <td class="active"><strong>pickup_minutes</strong></td>
+                  <td class="value">
+                    <table class="table table-bordered">
+                      <tr>
+                        <td><strong>Type:</strong></td>
+                        <td>Integer</td>
+                      </tr>
+                      <tr>
+                        <td><strong>Description:</strong></td>
+                        <td>The restaurant's current pickup time in minutes.</td>
+                      </tr>
+                    </table>
+                  </td>
+                </tr>
+                <tr>
+                  <td class="active"><strong>delivery_minutes</strong></td>
+                  <td class="value">
+                    <table class="table table-bordered">
+                      <tr>
+                        <td><strong>Type:</strong></td>
+                        <td>Integer</td>
+                      </tr>
+                      <tr>
+                        <td><strong>Description:</strong></td>
+                        <td>The restaurant's current delivery time in minutes.</td>
+                      </tr>
+                    </table>
+                  </td>
+                </tr>
+                <tr>
+                  <td class="active"><strong>items</strong></td>
+                  <td class="value">
+                    <table class="table table-bordered">
+                      <tr>
+                        <td><strong>Type:</strong></td>
+                        <td>String</td>
+                      </tr>
+                      <tr>
+                        <td><strong>Description:</strong></td>
+                        <td>The value of the items attribute.</td>
+                      </tr>
+                    </table>
+                  </td>
+                </tr>
+                <tr>
+                  <td class="active"><strong>fulfillment</strong></td>
+                  <td class="value">
+                    <table class="table table-bordered">
+                      <tr>
+                        <td><strong>Type:</strong></td>
+                        <td>String</td>
+                      </tr>
+                      <tr>
+                        <td><strong>Description:</strong></td>
+                        <td>A string specifying whether the order is pickup or delivery.</td>
+                      </tr>
+                    </table>
+                  </td>
+                </tr>
+                <tr>
+                  <td class="active"><strong>prepaid</strong></td>
+                  <td class="value">
+                    <table class="table table-bordered">
+                      <tr>
+                        <td><strong>Type:</strong></td>
+                        <td>Boolean</td>
+                      </tr>
+                      <tr>
+                        <td><strong>Description:</strong></td>
+                        <td>A boolean specifying whether the order prepaid.</td>
+                      </tr>
+                    </table>
+                  </td>
+                </tr>
+                <tr>
+                  <td class="active"><strong>payment</strong></td>
+                  <td class="value">
+                    <table class="table table-bordered">
+                      <tr>
+                        <td><strong>Type:</strong></td>
+                        <td>String</td>
+                      </tr>
+                      <tr>
+                        <td><strong>Description:</strong></td>
+                        <td>A string specifying whether the order payment type is cash or credit.</td>
+                      </tr>
+                    </table>
+                  </td>
+                </tr>
+                <tr>
+                  <td class="active"><strong>created</strong></td>
+                  <td class="value">
+                    <table class="table table-bordered">
+                      <tr>
+                        <td><strong>Type:</strong></td>
+                        <td>Timestamp</td>
+                      </tr>
+                      <tr>
+                        <td><strong>Description:</strong></td>
+                        <td>The UTC time that the record was created. Timestamps are in iso8601 format.</td>
+                      </tr>
+                    </table>
+                  </td>
+                </tr>
+              </table>
+            </div>
           </div>
         </div>
       </div>
