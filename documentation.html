@@ -476,7 +476,9 @@
                       <div class="line">-d 'items=One%20large%20pepperoni%20pizza%7COne%20dozen%20hot%20wings' \</div>
                       <div class="line">-d 'fulfillment=pickup' \</div>
                       <div class="line">-d 'prepaid=true' \</div>
-                      <div class="line">-d 'payment=credit'</div>
+                      <div class="line">-d 'payment=credit' \</div>
+                      <div class="line">-d 'customer_name=Hank%20Jones' \</div>
+                      <div class="line">-d 'customer_phone=+15551234567'</div>
                     </div>
                   </td>
                 </tr>
@@ -497,6 +499,8 @@
                       <div class="line">"fulfillment" : "pickup",</div>
                       <div class="line">"prepaid" : true,</div>
                       <div class="line">"payment" : "credit",</div>
+                      <div class="line">"customer_name" : "Hank Jones",</div>
+                      <div class="line">"customer_phone" : "+15551234567",</div>
                       <div class="line">"created" : "2013-11-27T15:26:43Z"</div>
                       <div>}</div>
                     </div>
@@ -678,6 +682,44 @@
                     </table>
                   </td>
                 </tr>
+                <tr>
+                  <td class="active"><strong>customer_name</strong></td>
+                  <td class="value">
+                    <table class="table table-bordered">
+                      <tr>
+                        <td><strong>Required:</strong></td>
+                        <td>Yes</td>
+                      </tr>
+                      <tr>
+                        <td><strong>Type:</strong></td>
+                        <td>String</td>
+                      </tr>
+                      <tr>
+                        <td><strong>Description:</strong></td>
+                        <td>A URL-encoded string specifying the name of the customer.</td>
+                      </tr>
+                    </table>
+                  </td>
+                </tr>
+                <tr>
+                  <td class="active"><strong>customer_phone</strong></td>
+                  <td class="value">
+                    <table class="table table-bordered">
+                      <tr>
+                        <td><strong>Required:</strong></td>
+                        <td>Yes</td>
+                      </tr>
+                      <tr>
+                        <td><strong>Type:</strong></td>
+                        <td>String</td>
+                      </tr>
+                      <tr>
+                        <td><strong>Description:</strong></td>
+                        <td>A string with the customer phone number in E.164 format.</td>
+                      </tr>
+                    </table>
+                  </td>
+                </tr>
               </table>
             </div>
 
@@ -813,6 +855,36 @@
                   </td>
                 </tr>
                 <tr>
+                  <td class="active"><strong>customer_name</strong></td>
+                  <td class="value">
+                    <table class="table table-bordered">
+                      <tr>
+                        <td><strong>Type:</strong></td>
+                        <td>String</td>
+                      </tr>
+                      <tr>
+                        <td><strong>Description:</strong></td>
+                        <td>A string specifying the name of the customer.</td>
+                      </tr>
+                    </table>
+                  </td>
+                </tr>
+                <tr>
+                  <td class="active"><strong>customer_phone</strong></td>
+                  <td class="value">
+                    <table class="table table-bordered">
+                      <tr>
+                        <td><strong>Type:</strong></td>
+                        <td>String</td>
+                      </tr>
+                      <tr>
+                        <td><strong>Description:</strong></td>
+                        <td>A string with the customer phone number in E.164 format.</td>
+                      </tr>
+                    </table>
+                  </td>
+                </tr>
+                <tr>
                   <td class="active"><strong>created</strong></td>
                   <td class="value">
                     <table class="table table-bordered">
@@ -875,6 +947,8 @@
                       <div class="line">"fulfillment" : "pickup",</div>
                       <div class="line">"prepaid" : true,</div>
                       <div class="line">"payment" : "credit",</div>
+                      <div class="line">"customer_name" : "Hank Jones",</div>
+                      <div class="line">"customer_phone" : "+15551234567",</div>
                       <div class="line">"created" : "2013-11-27T15:26:43Z"</div>
                       <div>}</div>
                     </div>
@@ -1050,6 +1124,36 @@
                       <tr>
                         <td><strong>Description:</strong></td>
                         <td>A string specifying whether the order payment type is cash or credit.</td>
+                      </tr>
+                    </table>
+                  </td>
+                </tr>
+                <tr>
+                  <td class="active"><strong>customer_name</strong></td>
+                  <td class="value">
+                    <table class="table table-bordered">
+                      <tr>
+                        <td><strong>Type:</strong></td>
+                        <td>String</td>
+                      </tr>
+                      <tr>
+                        <td><strong>Description:</strong></td>
+                        <td>A string specifying the name of the customer.</td>
+                      </tr>
+                    </table>
+                  </td>
+                </tr>
+                <tr>
+                  <td class="active"><strong>customer_phone</strong></td>
+                  <td class="value">
+                    <table class="table table-bordered">
+                      <tr>
+                        <td><strong>Type:</strong></td>
+                        <td>String</td>
+                      </tr>
+                      <tr>
+                        <td><strong>Description:</strong></td>
+                        <td>A string with the customer phone number in E.164 format.</td>
                       </tr>
                     </table>
                   </td>
