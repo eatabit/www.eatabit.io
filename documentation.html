@@ -478,7 +478,8 @@
                       <div class="line">-d 'prepaid=true' \</div>
                       <div class="line">-d 'payment=credit' \</div>
                       <div class="line">-d 'customer_name=Hank%20Jones' \</div>
-                      <div class="line">-d 'customer_phone=+15551234567'</div>
+                      <div class="line">-d 'customer_phone=+15551234567' \</div>
+                      <div class="line">-d 'customer_note=1st%20order'</div>
                     </div>
                   </td>
                 </tr>
@@ -501,6 +502,7 @@
                       <div class="line">"payment" : "credit",</div>
                       <div class="line">"customer_name" : "Hank Jones",</div>
                       <div class="line">"customer_phone" : "+15551234567",</div>
+                      <div class="line">"customer_note" : "1st order",</div>
                       <div class="line">"created" : "2013-11-27T15:26:43Z"</div>
                       <div>}</div>
                     </div>
@@ -720,6 +722,25 @@
                     </table>
                   </td>
                 </tr>
+                <tr>
+                  <td class="active"><strong>customer_note</strong></td>
+                  <td class="value">
+                    <table class="table table-bordered">
+                      <tr>
+                        <td><strong>Required:</strong></td>
+                        <td>No</td>
+                      </tr>
+                      <tr>
+                        <td><strong>Type:</strong></td>
+                        <td>String</td>
+                      </tr>
+                      <tr>
+                        <td><strong>Description:</strong></td>
+                        <td>A URL encoded string with an optional customer note.</td>
+                      </tr>
+                    </table>
+                  </td>
+                </tr>
               </table>
             </div>
 
@@ -885,6 +906,21 @@
                   </td>
                 </tr>
                 <tr>
+                  <td class="active"><strong>customer_note</strong></td>
+                  <td class="value">
+                    <table class="table table-bordered">
+                      <tr>
+                        <td><strong>Type:</strong></td>
+                        <td>String</td>
+                      </tr>
+                      <tr>
+                        <td><strong>Description:</strong></td>
+                        <td>A URL encoded string with an optional customer note.</td>
+                      </tr>
+                    </table>
+                  </td>
+                </tr>
+                <tr>
                   <td class="active"><strong>created</strong></td>
                   <td class="value">
                     <table class="table table-bordered">
@@ -949,6 +985,7 @@
                       <div class="line">"payment" : "credit",</div>
                       <div class="line">"customer_name" : "Hank Jones",</div>
                       <div class="line">"customer_phone" : "+15551234567",</div>
+                      <div class="line">"customer_note" : "1st order",</div>
                       <div class="line">"created" : "2013-11-27T15:26:43Z"</div>
                       <div>}</div>
                     </div>
@@ -1154,6 +1191,21 @@
                       <tr>
                         <td><strong>Description:</strong></td>
                         <td>A string with the customer phone number in E.164 format.</td>
+                      </tr>
+                    </table>
+                  </td>
+                </tr>
+                <tr>
+                  <td class="active"><strong>customer_note</strong></td>
+                  <td class="value">
+                    <table class="table table-bordered">
+                      <tr>
+                        <td><strong>Type:</strong></td>
+                        <td>String</td>
+                      </tr>
+                      <tr>
+                        <td><strong>Description:</strong></td>
+                        <td>A URL encoded string with an optional customer note.</td>
                       </tr>
                     </table>
                   </td>
