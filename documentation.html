@@ -474,8 +474,9 @@
                       <div class="line">-u 1:6s3AcHtv4Eja2ZkEhtPo4w \</div>
                       <div class="line">-H 'application/x-www-form-urlencoded'</div>
                       <div class="line">-d 'items=One%20large%20pepperoni%20pizza%7COne%20dozen%20hot%20wings' \</div>
-                      <div class="line">-d 'fulfillment=pickup' \</div>
-                      <div class="line">-d 'prepaid=true' \</div>
+                      <div class="line">-d 'fulfillment=Delivery' \</div>
+                      <div class="line">-d 'delivery_address=123%20Fake%20St.%20Apt%201A,%20Charleston,%20SC,%2029401' \</div>
+                      <div class="line">-d 'prepaid=false' \</div>
                       <div class="line">-d 'payment=credit' \</div>
                       <div class="line">-d 'customer_name=Hank%20Jones' \</div>
                       <div class="line">-d 'customer_phone=+15551234567' \</div>
@@ -498,8 +499,9 @@
                       <div class="line">"pickup_minutes" : 15,</div>
                       <div class="line">"delivery_minutes" : 30,</div>
                       <div class="line">"items" : "One large pepperoni pizza|One dozen hot wings",</div>
-                      <div class="line">"fulfillment" : "Pickup",</div>
-                      <div class="line">"prepaid" : true,</div>
+                      <div class="line">"fulfillment" : "Delivery",</div>
+                      <div class="line">"delivery_address" : "123 Fake St. Apt 1A, Charleston, SC, 29401",</div>
+                      <div class="line">"prepaid" : false,</div>
                       <div class="line">"payment" : "credit",</div>
                       <div class="line">"customer_name" : "Hank Jones",</div>
                       <div class="line">"customer_phone" : "+15551234567",</div>
@@ -553,51 +555,13 @@
               </table>
             </div>
 
-            <!-- POST /v1/account/:account_id/restaurant/:restaurant_id/orders RESPONSE PARAMS -->
+            <!-- POST /v1/account/:account_id/restaurant/:restaurant_id/orders REQUEST PARAMS -->
 
             <div class="panel panel-info">
               <div class="panel-heading">
                 <h3 class="panel-title">Request parameters</h3>
               </div>
               <table class="table table-bordered">
-                <tr>
-                  <td class="active"><strong>object</strong></td>
-                  <td class="value">
-                    <table class="table table-bordered">
-                      <tr>
-                        <td><strong>Type:</strong></td>
-                        <td>String</td>
-                      </tr>
-                      <tr>
-                        <td><strong>Value:</strong></td>
-                        <td>"order"</td>
-                      </tr>
-                      <tr>
-                        <td><strong>Description:</strong></td>
-                        <td>The class of the returned object. Provided for convenience.</td>
-                      </tr>
-                    </table>
-                  </td>
-                </tr>
-                <tr>
-                  <td class="active"><strong>id</strong></td>
-                  <td class="value">
-                    <table class="table table-bordered">
-                      <tr>
-                        <td><strong>Required:</strong></td>
-                        <td>Yes</td>
-                      </tr>
-                      <tr>
-                        <td><strong>Type:</strong></td>
-                        <td>Integer</td>
-                      </tr>
-                      <tr>
-                        <td><strong>Description:</strong></td>
-                        <td>The client's internal ID for the order object. It can be used for order lookup once the record is persisted.</td>
-                      </tr>
-                    </table>
-                  </td>
-                </tr>
                 <tr>
                   <td class="active"><strong>items</strong></td>
                   <td class="value">
@@ -636,6 +600,25 @@
                       <tr>
                         <td><strong>Description:</strong></td>
                         <td>A string specifying whether the order is pickup or delivery.</td>
+                      </tr>
+                    </table>
+                  </td>
+                </tr>
+                <tr>
+                  <td class="active"><strong>delivery_address</strong></td>
+                  <td class="value">
+                    <table class="table table-bordered">
+                      <tr>
+                        <td><strong>Required:</strong></td>
+                        <td>Yes, if :fulfillment equals 'Delivery'</td>
+                      </tr>
+                      <tr>
+                        <td><strong>Type:</strong></td>
+                        <td>String</td>
+                      </tr>
+                      <tr>
+                        <td><strong>Description:</strong></td>
+                        <td>A URL encoded string specifying the delivery address of the customer.</td>
                       </tr>
                     </table>
                   </td>
@@ -800,7 +783,7 @@
                   </td>
                 </tr>
                 <tr>
-                  <td class="active"><strong>external_id</strong></td>
+                  <td class="active"><strong>id</strong></td>
                   <td class="value">
                     <table class="table table-bordered">
                       <tr>
@@ -870,6 +853,21 @@
                       <tr>
                         <td><strong>Description:</strong></td>
                         <td>A string specifying whether the order is pickup or delivery.</td>
+                      </tr>
+                    </table>
+                  </td>
+                </tr>
+                <tr>
+                  <td class="active"><strong>delivery_address</strong></td>
+                  <td class="value">
+                    <table class="table table-bordered">
+                      <tr>
+                        <td><strong>Type:</strong></td>
+                        <td>String</td>
+                      </tr>
+                      <tr>
+                        <td><strong>Description:</strong></td>
+                        <td>A string specifying the delivery address of the customer.</td>
                       </tr>
                     </table>
                   </td>
@@ -1024,7 +1022,8 @@
                       <div class="line">"pickup_minutes" : 15,</div>
                       <div class="line">"delivery_minutes" : 30,</div>
                       <div class="line">"items" : "One large pepperoni pizza|One dozen hot wings",</div>
-                      <div class="line">"fulfillment" : "Pickup",</div>
+                      <div class="line">"fulfillment" : "Delivery",</div>
+                      <div class="line">"delivery_address" : "123 Fake St. Apt 1A, Charleston, SC, 29401",</div>
                       <div class="line">"prepaid" : true,</div>
                       <div class="line">"payment" : "credit",</div>
                       <div class="line">"customer_name" : "Hank Jones",</div>
@@ -1176,6 +1175,21 @@
                       <tr>
                         <td><strong>Description:</strong></td>
                         <td>A string specifying whether the order is pickup or delivery.</td>
+                      </tr>
+                    </table>
+                  </td>
+                </tr>
+                <tr>
+                  <td class="active"><strong>delivery_address</strong></td>
+                  <td class="value">
+                    <table class="table table-bordered">
+                      <tr>
+                        <td><strong>Type:</strong></td>
+                        <td>String</td>
+                      </tr>
+                      <tr>
+                        <td><strong>Description:</strong></td>
+                        <td>A string specifying the delivery address of the customer.</td>
                       </tr>
                     </table>
                   </td>
