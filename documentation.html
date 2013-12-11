@@ -324,6 +324,8 @@
                       <div class="line">"object" : "restaurant",</div>
                       <div class="line">"name" : "Bill's Pizza",</div>
                       <div class="line">"premise_phone_number" : "+15551234567",</div>
+                      <div class="line">"pickup_minutes" : 15,</div>
+                      <div class="line">"delivery_minutes" : 30,</div>
                       <div class="line">"created" : "2013-11-27T15:26:43Z"</div>
                       <div>}</div>
                     </div>
@@ -424,6 +426,36 @@
                       <tr>
                         <td><strong>Description:</strong></td>
                         <td>The phone number of the restaurant in <a href="https://en.wikipedia.org/wiki/E.164">E.164</a> format.</td>
+                      </tr>
+                    </table>
+                  </td>
+                </tr>
+                <tr>
+                  <td class="active"><strong>pickup_minutes</strong></td>
+                  <td class="value">
+                    <table class="table table-bordered">
+                      <tr>
+                        <td><strong>Type:</strong></td>
+                        <td>Integer</td>
+                      </tr>
+                      <tr>
+                        <td><strong>Description:</strong></td>
+                        <td>The current fulfillment time for pickup orders, in minutes.</td>
+                      </tr>
+                    </table>
+                  </td>
+                </tr>
+                <tr>
+                  <td class="active"><strong>delivery_minutes</strong></td>
+                  <td class="value">
+                    <table class="table table-bordered">
+                      <tr>
+                        <td><strong>Type:</strong></td>
+                        <td>Integer</td>
+                      </tr>
+                      <tr>
+                        <td><strong>Description:</strong></td>
+                        <td>The current fulfillment time for delivery orders, in minutes.</td>
                       </tr>
                     </table>
                   </td>
