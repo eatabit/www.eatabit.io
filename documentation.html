@@ -324,6 +324,7 @@
                       <div class="line">"object" : "restaurant",</div>
                       <div class="line">"name" : "Bill's Pizza",</div>
                       <div class="line">"premise_phone_number" : "+15551234567",</div>
+                      <div class="line">"printer_state" : "online",</div>
                       <div class="line">"pickup_minutes" : 15,</div>
                       <div class="line">"delivery_minutes" : 30,</div>
                       <div class="line">"created" : "2013-11-27T15:26:43Z"</div>
@@ -426,6 +427,21 @@
                       <tr>
                         <td><strong>Description:</strong></td>
                         <td>The phone number of the restaurant in <a href="https://en.wikipedia.org/wiki/E.164">E.164</a> format.</td>
+                      </tr>
+                    </table>
+                  </td>
+                </tr>
+                <tr>
+                  <td class="active"><strong>printer_state</strong></td>
+                  <td class="value">
+                    <table class="table table-bordered">
+                      <tr>
+                        <td><strong>Type:</strong></td>
+                        <td>String</td>
+                      </tr>
+                      <tr>
+                        <td><strong>Description:</strong></td>
+                        <td>The current state of the printer. Values are 'online' or 'offline'. If the printer_state equals 'offline', the API will not accept orders for that printer until it comes back online.</td>
                       </tr>
                     </table>
                   </td>
