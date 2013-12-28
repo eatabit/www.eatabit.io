@@ -72,7 +72,7 @@
             <li class="list-group-item"><a href="./authentication.html">Authentication</a></li>
             <li class="list-group-item"><a href="./account_read.html">Account READ</a></li>
             <li class="list-group-item"><a href="./restaurant_read.html"> Restaurant READ</a></li>
-            <li class="list-group-item"><a href="./order_create.html"><i class="fa fa-check"></i> Order CREATE</a></li>
+            <li class="list-group-item"><a href="#"><i class="fa fa-check"></i> Order CREATE</a></li>
             <li class="list-group-item"><a href="./order_read.html"> Order READ</a></li>
           </ul>
         </div>
@@ -82,7 +82,7 @@
 
         <div class="resource-content" id="resource-orders">
           <h3>Order CREATE</h3>
-          <h4>/v1/account/:account_id/restaurant/:restaurant_id/orders.json</h4>
+          <h4>/v1/account/:account_id/orders.json</h4>
           <hr/>
           <div class="row">
 
@@ -101,19 +101,19 @@
                   <td class="active"><strong>Example</strong></td>
                   <td>
                     <div class="curl">
-                      <div>curl https://api.eatabit.io/v1/account/1/restaurant/+15551234567/orders.json \</div>
+                      <div>curl https://api.eatabit.io/v1/account/1/orders.json \</div>
                       <div class="line">-X POST \</div>
                       <div class="line">-u 1:6s3AcHtv4Eja2ZkEhtPo4w \</div>
-                      <div class="line">-H 'application/x-www-form-urlencoded'</div>
-                      <div class="line">-d 'items=One%20large%20pepperoni%20pizza%7COne%20dozen%20hot%20wings' \</div>
-                      <div class="line">-d 'fulfillment=Delivery' \</div>
-                      <div class="line">-d 'delivery_address=123%20Fake%20St.%20Apt%201A,%20Charleston,%20SC,%2029401' \</div>
-                      <div class="line">-d 'prepaid=false' \</div>
-                      <div class="line">-d 'payment=credit' \</div>
-                      <div class="line">-d 'customer_name=Hank%20Jones' \</div>
-                      <div class="line">-d 'customer_phone=+15551234567' \</div>
-                      <div class="line">-d 'customer_note=1st%20order' \</div>
-                      <div class="line">-d 'payment_note=%23%23%23%23-%23%23%23%23-%23%23%23%23-0000'</div>
+                      <div class="line">--data-urlencode 'restaurant_id=+15551234567' \</div>
+                      <div class="line">--data-urlencode 'items=One large pepperoni pizza|One dozen hot wings' \</div>
+                      <div class="line">--data-urlencode 'fulfillment=Delivery' \</div>
+                      <div class="line">--data-urlencode 'delivery_address=123 Fake St. Apt 1A, Charleston, SC, 29401' \</div>
+                      <div class="line">--data-urlencode 'prepaid=false' \</div>
+                      <div class="line">--data-urlencode 'payment=credit' \</div>
+                      <div class="line">--data-urlencode 'customer_name=Hank Jones' \</div>
+                      <div class="line">--data-urlencode 'customer_phone=+15551234567' \</div>
+                      <div class="line">--data-urlencode 'customer_note=1st order' \</div>
+                      <div class="line">--data-urlencode 'payment_note=####-####-####-0000'</div>
                     </div>
                   </td>
                 </tr>
@@ -147,7 +147,7 @@
               </table>
             </div>
 
-            <!-- POST /v1/account/:account_id/restaurant/:restaurant_id/orders ROUTE PARAMS -->
+            <!-- POST /v1/account/:account_id/orders ROUTE PARAMS -->
 
             <div class="panel panel-info">
               <div class="panel-heading">
@@ -160,26 +160,11 @@
                     <table class="table table-bordered">
                       <tr>
                         <td><strong>Position:</strong></td>
-                        <td>/v1/account/<strong>:account_id</strong>/restaurant/+15551234567/orders.json</td>
+                        <td>/v1/account/<strong>:account_id</strong>/orders.json</td>
                       </tr>
                       <tr>
                         <td><strong>Description:</strong></td>
-                        <td>The id of your eatabit.io account. This is the same integer as is passed as <strong>USER</strong> in the request <strong>HTTP BASIC AUTH.</strong></td>
-                      </tr>
-                    </table>
-                  </td>
-                </tr>
-                <tr>
-                  <td class="active"><strong>:restaurant_id</strong></td>
-                  <td class="value">
-                    <table class="table table-bordered">
-                      <tr>
-                        <td><strong>Position:</strong></td>
-                        <td>/v1/account/1/restaurant/<strong>:restaurant_id</strong>/orders.json</td>
-                      </tr>
-                      <tr>
-                        <td><strong>Description:</strong></td>
-                        <td>The restaurant premise phone number in <a href="https://en.wikipedia.org/wiki/E.164">E.164</a> format (including the leading '+').</td>
+                        <td>Your eatabit.io :account_id. This is the same integer as is passed as <strong>USER</strong> in the request <strong><a href="https://en.wikipedia.org/wiki/Basic_access_authentication">HTTP Basic auth</a></strong></td>
                       </tr>
                     </table>
                   </td>
@@ -194,6 +179,25 @@
                 <h3 class="panel-title">Request parameters</h3>
               </div>
               <table class="table table-bordered">
+                <tr>
+                  <td class="active"><strong>restaurant_id</strong></td>
+                  <td class="value">
+                    <table class="table table-bordered">
+                      <tr>
+                        <td><strong>Required:</strong></td>
+                        <td>Yes</td>
+                      </tr>
+                      <tr>
+                        <td><strong>Type:</strong></td>
+                        <td>Integer</td>
+                      </tr>
+                      <tr>
+                        <td><strong>Description:</strong></td>
+                        <td>The url-encoded restaurant premise phone number in <a href="https://en.wikipedia.org/wiki/E.164">E.164</a> format (including the leading '+').</td>
+                      </tr>
+                    </table>
+                  </td>
+                </tr>
                 <tr>
                   <td class="active"><strong>items</strong></td>
                   <td class="value">
