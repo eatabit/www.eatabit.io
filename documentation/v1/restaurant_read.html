@@ -118,6 +118,7 @@
                       <div>JSON: {</div>
                       <div class="line">"object" : "restaurant",</div>
                       <div class="line">"name" : "Bill's Pizza",</div>
+                      <div class="line">"enabled" : true,</div>
                       <div class="line">"premise_phone_number" : "+15551234567",</div>
                       <div class="line">"printer_state" : "online",</div>
                       <div class="line">"pickup_minutes" : 15,</div>
@@ -207,6 +208,21 @@
                       <tr>
                         <td><strong>Description:</strong></td>
                         <td>The name of the restaurant.</td>
+                      </tr>
+                    </table>
+                  </td>
+                </tr>
+                <tr>
+                  <td class="active"><strong>enabled</strong></td>
+                  <td class="value">
+                    <table class="table table-bordered">
+                      <tr>
+                        <td><strong>Type:</strong></td>
+                        <td>Boolean</td>
+                      </tr>
+                      <tr>
+                        <td><strong>Description:</strong></td>
+                        <td>The administrative state of the restauant. Restaurants that are disabled cannot receive orders.</td>
                       </tr>
                     </table>
                   </td>
