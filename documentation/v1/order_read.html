@@ -117,6 +117,8 @@
                     <div class="json">
                       <div>JSON: {</div>
                       <div class="line">"object" : "order",</div>
+                      <div class="line">"id" : 1,</div>
+                      <div class="line">"state" : "queued",</div>
                       <div class="line">"pickup_minutes" : 15,</div>
                       <div class="line">"delivery_minutes" : 30,</div>
                       <div class="line">"items" : "One large pepperoni pizza|One dozen hot wings",</div>
@@ -128,6 +130,7 @@
                       <div class="line">"customer_phone" : "+15551234567",</div>
                       <div class="line">"customer_note" : "1st order",</div>
                       <div class="line">"payment_note" : "####-####-####-0000",</div>
+                      <div class="line">"status_url" : "https://your-api.com/order/1.json",</div>
                       <div class="line">"created" : "2013-11-27T15:26:43Z"</div>
                       <div>}</div>
                     </div>
@@ -198,6 +201,61 @@
                       <tr>
                         <td><strong>Description:</strong></td>
                         <td>The class of the returned object. Provided for convenience.</td>
+                      </tr>
+                    </table>
+                  </td>
+                </tr>
+                <tr>
+                  <td class="active"><strong>id</strong></td>
+                  <td class="value">
+                    <table class="table table-bordered">
+                      <tr>
+                        <td><strong>Type:</strong></td>
+                        <td>String</td>
+                      </tr>
+                      <tr>
+                        <td><strong>Description:</strong></td>
+                        <td>The eatabit.io id for the order object. It is used for order lookup once the record is persisted.</td>
+                      </tr>
+                    </table>
+                  </td>
+                </tr>
+                <tr>
+                  <td class="active"><strong>state</strong></td>
+                  <td class="value">
+                    <table class="table table-bordered">
+                      <tr>
+                        <td><strong>Type:</strong></td>
+                        <td>String</td>
+                      </tr>
+                      <tr>
+                        <td><strong>Description:</strong></td>
+                        <td>The the current state of the order.</td>
+                      </tr>
+                      <tr>
+                        <td><strong>Possible values:</strong></td>
+                        <td>
+                          <ul class="list-unstyled">
+                            <li><strong>queued:</strong></li>
+                            <li>
+                              <ul class="unstyled">
+                                <li>API has successfully recieved the order. Order is ready for download.</li>
+                              </ul>
+                            </li>
+                            <li><strong>downloaded:</strong></li>
+                            <li>
+                              <ul class="unstyled">
+                                <li>Order has been received successfully by the printer.</li>
+                              </ul>
+                            </li>
+                            <li><strong>printed:</strong></li>
+                            <li>
+                              <ul class="unstyled">
+                                <li>Restaurant has successfully printed the order.</li>
+                              </ul>
+                            </li>
+                          </ul>
+                        </td>
                       </tr>
                     </table>
                   </td>
@@ -363,6 +421,41 @@
                       <tr>
                         <td><strong>Description:</strong></td>
                         <td>A URL encoded string with an optional payment note. <strong>Transmission of any credit card data, apart from the last 4 card number digits, is strictly forbidden</strong>.</td>
+                      </tr>
+                    </table>
+                  </td>
+                </tr>
+                <tr>
+                  <td class="active"><strong>status_url</strong></td>
+                  <td class="value">
+                    <table class="table table-bordered">
+                      <tr>
+                        <td><strong>Type:</strong></td>
+                        <td>String</td>
+                      </tr>
+                      <tr>
+                        <td><strong>Description:</strong></td>
+                        <td>
+                          A URL encoded string with the :status_url value you provided. Eatabit will <strong>POST</strong> to this url with the following params:
+                          <p>
+                            <div class="well">
+                              <ul class="list-unstyled">
+                                <li>state</li>
+                                <li>
+                                  <ul>
+                                    <li>The current state of the order.</li>
+                                  </ul>
+                                </li>
+                                <li>id:</li>
+                                <li>
+                                  <ul>
+                                    <li>The ID of the order. Provided for convenience.</li>
+                                  </ul>
+                                </li>
+                              </ul>
+                            </div>
+                          </p>
+                        </td>
                       </tr>
                     </table>
                   </td>
