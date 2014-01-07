@@ -101,9 +101,9 @@
                   <td class="active"><strong>Example</strong></td>
                   <td>
                     <div class="curl">
-                      <div>curl https://api.eatabit.io/v1/account/1/orders/1.json \</div>
+                      <div>curl https://api.eatabit.io/v1/account/ad1b5852-d22f-49c8-8b09-31995ac519a3/orders/1.json \</div>
                       <div class="line">-X GET \</div>
-                      <div class="line">-u 1:6s3AcHtv4Eja2ZkEhtPo4w</div>
+                      <div class="line">-u ad1b5852-d22f-49c8-8b09-31995ac519a3:6s3AcHtv4Eja2ZkEhtPo4w</div>
                     </div>
                   </td>
                 </tr>
@@ -117,7 +117,7 @@
                     <div class="json">
                       <div>JSON: {</div>
                       <div class="line">"object" : "order",</div>
-                      <div class="line">"id" : 1,</div>
+                      <div class="line">"id" : "c660a0dc-30f1-4fe6-a2e1-5be375ff9c9c",</div>
                       <div class="line">"state" : "queued",</div>
                       <div class="line">"pickup_minutes" : 15,</div>
                       <div class="line">"delivery_minutes" : 30,</div>
@@ -156,7 +156,7 @@
                       </tr>
                       <tr>
                         <td><strong>Description:</strong></td>
-                        <td>The id of your eatabit.io account. This is the same integer as is passed as <strong>USER</strong> in the request <strong><a href="https://en.wikipedia.org/wiki/Basic_access_authentication">HTTP Basic auth</a></strong></td>
+                        <td>The UUID of your eatabit.io account. This is the same UUID as is passed as <strong>USER</strong> in the request <strong><a href="https://en.wikipedia.org/wiki/Basic_access_authentication">HTTP Basic auth</a></strong></td>
                       </tr>
                     </table>
                   </td>
@@ -167,7 +167,7 @@
                     <table class="table table-bordered">
                       <tr>
                         <td><strong>Position:</strong></td>
-                        <td>/v1/account/1/orders/<strong>:order_id</strong>.json</td>
+                        <td>/v1/account/ad1b5852-d22f-49c8-8b09-31995ac519a3/orders/<strong>:order_id</strong>.json</td>
                       </tr>
                       <tr>
                         <td><strong>Description:</strong></td>
@@ -211,11 +211,11 @@
                     <table class="table table-bordered">
                       <tr>
                         <td><strong>Type:</strong></td>
-                        <td>String</td>
+                        <td>UUID</td>
                       </tr>
                       <tr>
                         <td><strong>Description:</strong></td>
-                        <td>The eatabit.io id for the order object. It is used for order lookup once the record is persisted.</td>
+                        <td>The eatabit.io UUID for the order object. It is used for order lookup once the record is persisted.</td>
                       </tr>
                     </table>
                   </td>
