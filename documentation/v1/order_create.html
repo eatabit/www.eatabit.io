@@ -113,7 +113,8 @@
                       <div class="line">--data-urlencode 'customer_name=Hank Jones' \</div>
                       <div class="line">--data-urlencode 'customer_phone=+15551234567' \</div>
                       <div class="line">--data-urlencode 'customer_note=1st order' \</div>
-                      <div class="line">--data-urlencode 'payment_note=####-####-####-0000'</div>
+                      <div class="line">--data-urlencode 'payment_note=####-####-####-0000' \</div>
+                      <div class="line">--data-urlencode 'status_url=https://eatabit.io/orders/status.json'</div>
                     </div>
                   </td>
                 </tr>
@@ -141,6 +142,7 @@
                       <div class="line">"customer_phone" : "+15551234567",</div>
                       <div class="line">"customer_note" : "1st order",</div>
                       <div class="line">"payment_note" : "####-####-####-0000",</div>
+                      <div class="line">"status_url" : "https://eatabit.io/orders/status.json",</div>
                       <div class="line">"created" : "2013-11-27T15:26:43Z"</div>
                       <div>}</div>
                     </div>
@@ -651,6 +653,41 @@
                       <tr>
                         <td><strong>Description:</strong></td>
                         <td>A URL encoded string with an optional payment note. <strong>Transmission of any credit card data, apart from the last 4 card number digits, is strictly forbidden</strong>.</td>
+                      </tr>
+                    </table>
+                  </td>
+                </tr>
+                <tr>
+                  <td class="active"><strong>status_url</strong></td>
+                  <td class="value">
+                    <table class="table table-bordered">
+                      <tr>
+                        <td><strong>Type:</strong></td>
+                        <td>String</td>
+                      </tr>
+                      <tr>
+                        <td><strong>Description:</strong></td>
+                        <td>
+                          A URL encoded string with the :status_url value you provided. Eatabit will <strong>POST</strong> to this url with the following params:
+                          <p>
+                            <div class="well">
+                              <ul class="list-unstyled">
+                                <li>state</li>
+                                <li>
+                                  <ul>
+                                    <li>The current state of the order.</li>
+                                  </ul>
+                                </li>
+                                <li>id:</li>
+                                <li>
+                                  <ul>
+                                    <li>The ID (UUID) of the order.</li>
+                                  </ul>
+                                </li>
+                              </ul>
+                            </div>
+                          </p>
+                        </td>
                       </tr>
                     </table>
                   </td>
