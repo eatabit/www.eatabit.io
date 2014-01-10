@@ -18,6 +18,10 @@ body.page-documentation {
   padding-bottom: 50px;
 }
 
+li.list-item-indented {
+  margin-left: 15px;
+}
+
 /* HEADER CONTENT
 -------------------------------------------------- */
 

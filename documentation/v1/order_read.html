@@ -456,16 +456,30 @@
                           <p>
                             <div class="well">
                               <ul class="list-unstyled">
-                                <li>state</li>
+                                <li>account_id:</li>
                                 <li>
                                   <ul>
-                                    <li>The current state of the order.</li>
+                                    <li>The id (UUID) of your account.</li>
                                   </ul>
                                 </li>
                                 <li>id:</li>
                                 <li>
                                   <ul>
-                                    <li>The ID (UUID) of the order.</li>
+                                    <li>The id (UUID) of the order.</li>
+                                  </ul>
+                                </li>
+                                <li>state</li>
+                                <li>
+                                  <ul>
+                                    <li>The current state of the order.</li>
+                                    <li>Possible values:</li>
+                                    <li class="list-item-indented">
+                                      <ul class="list-unstyled">
+                                        <li><strong>queued:</strong> The order has been queued for download.</li>
+                                        <li><strong>downloaded:</strong> The order has been downloaded.</li>
+                                        <li><strong>printed:</strong> The order has been printed.</li>
+                                      </ul>
+                                    </li>
                                   </ul>
                                 </li>
                               </ul>
