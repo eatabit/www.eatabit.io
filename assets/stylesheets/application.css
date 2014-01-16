@@ -1,92 +1,52 @@
-/* GLOBAL STYLES
--------------------------------------------------- */
-/* Padding below the footer and lighter body text */
-
 body {
-  padding-bottom: 40px;
-  color: #5a5a5a;
-}
-
-body.page-home {
-  background-image: url("../images/city.jpg");
-  background-repeat: repeat-y;
-  background-attachment: fixed;
-  background-position: 50% 0%;
+  padding-bottom: 20px;
 }
 
 body.page-documentation {
-  padding-bottom: 50px;
+  padding-top: 30px;
+  padding-bottom: 70px;
 }
 
 li.list-item-indented {
   margin-left: 15px;
 }
 
-/* HEADER CONTENT
--------------------------------------------------- */
-
-.header .logo, .header .links {
-  margin-top: 2em;
+.navbar {
+  background-color: #eee;
+  margin-bottom: 0;
 }
 
-.links {
-  line-height: 45px;
+.navbar #documentation {
+  z-index: 10001;
 }
 
-.links a {
-  color: #eee;
+.jumbotron h1 {
+  margin-bottom: 10px;
 }
 
-/* MARKETING CONTENT
--------------------------------------------------- */
-
-/* Pad the edges of the mobile views a bit */
-.marketing {
-  padding: 30px 15px;
-  background-color: #fff;
-  -moz-border-radius: 50px;
-  -webkit-border-radius: 50px;
-  border-radius: 50px;
+.jumbotron h1 > p {
+  font-size: 1.1em;
 }
 
-/* Center align the text within the three columns below the carousel */
-.marketing .col-lg-4 {
-  text-align: center;
-  margin-bottom: 20px;
-}
-.marketing h2 {
-  font-weight: normal;
-}
-.marketing .col-lg-4 p {
-  margin-left: 10px;
-  margin-right: 10px;
+.jumbotron p.lead {
+  margin-top: 17px;
 }
 
-
-/* Featurettes
-------------------------- */
-
-.featurette {
-  padding: 3em;
+.jumbotron #printer {
+  position: absolute;
+  top: -150px;
+  z-index: 10000;
 }
 
-.featurette-divider {
-  margin: 80px 0; /* Space out the Bootstrap <hr> more */
+.row.restaurants, .row.aggregators {
+  margin-top: 50px;
 }
 
-/* Thin out the marketing headings */
-.featurette-heading {
-  font-weight: 300;
-  line-height: 1;
-  letter-spacing: -1px;
+.row.restaurants h1, .row.aggregators h1 {
+  font-size: 50px;
 }
 
-i.featurette-icon {
-  font-size: 5em;
-}
-
-/* Documentation
-------------------------- */
+/* Documentation*/
 
 .documentation .resource-content .panel-danger {
   margin-top: 1em;
@@ -112,34 +72,11 @@ i.featurette-icon {
   padding: 0;
 }
 
-/* RESPONSIVE CSS
--------------------------------------------------- */
+/* Media queries */
 
 @media (max-width: 768px) {
 
-  .mobile-hidden {
+  #printer {
     display: none;
-  }
-}
-
-@media (min-width: 768px) {
-
-  /* Remove the edge padding needed for mobile */
-  .marketing {
-    padding: 30px 15px;
-    background-color: #fff;
-    -moz-border-radius: 50px;
-    -webkit-border-radius: 50px;
-    border-radius: 50px;
-  }
-
-  .featurette-heading {
-    font-size: 50px;
-  }
-}
-
-@media (min-width: 992px) {
-  .featurette-heading {
-    margin-top: 120px;
   }
 }

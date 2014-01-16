@@ -14,15 +14,18 @@
     <!-- Bootstrap core CSS -->
     <link href="assets/stylesheets/bootstrap.min.css" rel="stylesheet">
 
+    <!-- Custom styles for this template -->
+    <link href="assets/stylesheets/font-awesome.css" rel="stylesheet">
+    <link href="assets/stylesheets/application.css" rel="stylesheet">
+
+    <!-- Just for debugging purposes. Don't actually copy this line! -->
+    <!--[if lt IE 9]><script src="../../docs-assets/js/ie8-responsive-file-warning.js"></script><![endif]-->
+
     <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!--[if lt IE 9]>
       <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
       <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
     <![endif]-->
-
-    <!-- Custom styles for this template -->
-    <link href="assets/stylesheets/font-awesome.css" rel="stylesheet">
-    <link href="assets/stylesheets/application.css" rel="stylesheet">
 
     <script>
       (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
@@ -35,112 +38,77 @@
 
     </script>
   </head>
-<!-- NAVBAR
-================================================== -->
-  <body class="page-home">
-    <div class="container header">
+
+  <body>
+
+    <div class="navbar" role="navigation">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="#"><img src="assets/images/logo.png" alt="eatabit.io"></a>
+        </div><!--/.navbar-collapse -->
+        <ul class="nav navbar-nav navbar-right">
+          <li><a href="documentation/v1/authentication.html" id="documentation"><i class="fa fa-star"> API Documentation</i></a></li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Main jumbotron for a primary marketing message or call to action -->
+    <div class="jumbotron">
+      <div class="container">
         <div class="row">
-            <div class="col-md-3 logo">
-                <a href="./index.html"><img src="assets/images/logo.png" alt="eatabit.io"></a>
-            </div>
-            <div class="col-md-8 mobile-hidden">
-                <div class="pull-right">
-                    <img src="assets/images/printer.png" alt="cellular printer">
-                </div>
-            </div>
-            <div class="col-md-1 links">
-              <a href="./documentation/v1/authentication.html", class="btn btn-default active">
-                <i class="fa fa-file-text-o"> Docs</i>
-              </a>
-            </div>
+          <div class="col-md-6">
+            <h1>eatabit.io</h1>
+            <p><strong>We print your online food orders inside the restaurant.</strong></p>
+            <p class="lead">
+              Taking orders online is <strong>easy</strong> (ok, not <em>that</em> easy) but getting the order into the hands of the restaurant - now that's <strong>hard</strong>. That's where eatabit.io comes in.
+            </p>
+            <p>
+              <a class="btn btn-primary btn-lg" role="button" href="#restaurants"><i class="fa fa-cutlery"> eatabit for Restaurants</i></a>
+              <a class="btn btn-primary btn-lg" role="button" href="#aggregators"><i class="fa fa-cloud"> eatabit for Aggregators</i></a>
+            </p>
+          </div>
+          <div class="col-md-6">
+            <img src="assets/images/printer.png" alt="cellular printer" id="printer">
           </div>
         </div>
       </div>
     </div>
 
-    <!-- Marketing messaging and featurettes
-    ================================================== -->
-    <!-- Wrap the rest of the page in another container to center all the content. -->
+    <div class="container">
 
-    <div class="container marketing">
-
-      <!-- Three columns of text below the carousel -->
-      <div class="row">
-        <div class="col-lg-4">
-          <p><i class="fa fa-thumbs-up fa-5x"></i></p>
-          <h2>Partner</h2>
-          <p><strong>Partner</strong> with us for access to our cellular printer network. Partnership means you supply the order and we get it to the restaurant. Here's the best part: <strong>It's free</strong>.</p>
-          <p><a class="btn btn-default" href="#partner" role="button">View details &raquo;</a></p>
-        </div><!-- /.col-lg-4 -->
-        <div class="col-lg-4">
-          <p><i class="fa fa-cloud-upload fa-5x"></i></p>
-          <h2>Post</h2>
-          <p><strong>POST</strong>ing your orders to our RESTful API connects you to our on-premise printers. Through the API, your organization can print your orders, view realtime status and analytics.</p>
-          <p><a class="btn btn-default" href="#post" role="button">View details &raquo;</a></p>
-        </div><!-- /.col-lg-4 -->
-        <div class="col-lg-4">
-          <p><i class="fa fa-print fa-5x"></i></p>
-          <h2>Print</h2>
-          <p><strong>Print</strong> to our purpose-built, 2-way cellular printers. Housed in compact, 3D printed enclosures, they stay connected to the API in realtime and alert staff when your orders arrive.</p>
-          <p><a class="btn btn-default" href="#print" role="button">View details &raquo;</a></p>
-        </div>
-      </div>
-
-      <!-- START THE FEATURETTES -->
-
-      <hr class="featurette-divider">
-
-      <div class="row featurette" id="partner">
-        <div class="col-md-7">
-          <h2 class="featurette-heading">Partner with us. <span class="text-muted">We've got a guy on the inside...</span></h2>
-          <p class="lead">Taking orders online is easy (ok, not <em>that</em> easy) but getting the order into the hands of the restaurant - now that's <strong><em>hard</em></strong>. That's where we come in. Partner with us, and we deliver your orders instantly into the restaurant's hands. Partnership is simple: you provide orders, we deliver them...for free. Free as in "free".</p>
-        </div>
-        <div class="col-md-5">
+      <div class="row restaurants" id="restaurants">
+        <div class="col-md-3">
           <img class="featurette-image img-responsive" src="assets/images/check.png" alt="eatabit.io partnership">
         </div>
-      </div>
-
-      <hr class="featurette-divider" id="post">
-
-      <div class="row featurette">
-        <div class="col-md-5">
-          <img class="featurette-image img-responsive" src="assets/images/json.png" alt="eatabit.io json api">
-        </div>
-        <div class="col-md-7">
-          <h2 class="featurette-heading">Post to a standard API. <span class="text-muted">REST is the best.</span></h2>
-          <p class="lead">We provide a standard JSON API which allows you to view restaurants' realtime pickup and delivery times, create new print jobs and view status on existing jobs. So with one POST, your order is formatted, transmitted and printed - done.</p>
+        <div class="col-md-9">
+          <h1><i class="fa fa-cutlery"></i> Restaurants</h1>
+          <p class="lead">Recieving online orders from your customers is a complex and costly component of your operation. What if you could not only receive printed orders from any online source, but do so at a cost you control?</p>
         </div>
       </div>
 
-      <hr class="featurette-divider" id="print">
-
-      <div class="row featurette">
-        <div class="col-md-7">
-          <h2 class="featurette-heading">Print inside the restaurant. <span class="text-muted">Paper is king.</span></h2>
-          <p class="lead">Nothing beats a printed ticket. Our purpose-built, patented, 2-way printers are placed inside the restaurant - where all the action is. The printers alert the staff when orders are ready to print and supply you with realtime confirmations and fulfillment times.</p>
+      <div class="row aggregators" id="aggregators">
+        <div class="col-md-9">
+          <h1><i class="fa fa-cloud"></i> Aggregators</h1>
+          <p class="lead">Sending your orders to your restaurants is a complex and costly component of your operation. What if you could not only print your orders directly inside the restaurant, but get paid for every order you print?</p>
         </div>
-        <div class="col-md-5">
-          <img class="featurette-image img-responsive" src="assets/images/board.png" alt="eatabit.io cellular receipt printer">
+        <div class="col-md-3">
+          <img class="featurette-image img-responsive" src="assets/images/code.png" alt="eatabit.io cellular receipt printer">
         </div>
       </div>
 
-      <hr class="featurette-divider">
+      <hr>
 
-      <!-- /END THE FEATURETTES -->
-
-
-      <!-- FOOTER -->
       <footer>
-        <p class="pull-right"><a href="#">Back to top</a></p>
-        <p>&copy; 2013 eatabit.com, Inc. &middot; <a href="#">Privacy</a> &middot; <a href="#">Terms</a></p>
+        <p>&copy; eatabit.io 2014</p>
       </footer>
+    </div> <!-- /container -->
 
-    </div><!-- /.container -->
-
-
-    <!-- Bootstrap core JavaScript
-    ================================================== -->
-    <!-- Placed at the end of the document so the pages load faster -->
     <script src="assets/javascript/jquery-1.10.2.min.js"></script>
     <script src="assets/javascript/bootstrap.min.js"></script>
   </body>
