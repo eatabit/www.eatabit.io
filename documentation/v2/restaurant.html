@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -59,23 +60,23 @@
       <div class="col-md-2 sidebar">
         <ul class="nav nav-pills nav-stacked">
           <li><a href="./authentication.html">Authentication</a></li>
-          <li class="active"><a href="./account.html">Account</a></li>
-          <li><a href="./restaurant.html">Restaurant</a></li>
+          <li><a href="./account.html">Account</a></li>
+          <li class="active"><a href="./restaurant.html">Restaurant</a></li>
           <li><a href="./job.html">Job</a></li>
         </ul>
       </div>
       <div class="col-md-1"></div>
       <div class="col-md-8" id="resource-container">
 
-        <div class="resource-content" id="resource-accounts">
-          <h2>Account</h2>
+        <div class="resource-content" id="resource-restaurants-id">
+          <h2>Restaurant</h2>
           <h3>READ</h3>
-          <h4>/v2/account/:sid.json</h4>
+          <h4>/v2/account/:sid/restaurants/:restaurant_id.json</h4>
           <hr/>
-
-          <!-- Account:READ GET /v2/account/:account_id VALID REQUEST -->
-
           <div class="row">
+
+            <!-- GET /v2/account/:dis/restaurants/:restaurant_id SUCCESS -->
+
             <div class="panel panel-success">
               <div class="panel-heading">
                 <h3 class="panel-title">Valid request</h3>
@@ -86,18 +87,10 @@
                   <td>GET</td>
                 </tr>
                 <tr>
-                  <td class="active"><strong>Format</strong></td>
-                  <td>
-                    <div class="curl">
-                      <div>https://api.eatabit.io/<strong>:api_version</strong>/account/<strong>:sid</strong>.json</div>
-                    </div>
-                  </td>
-                </tr>
-                <tr>
                   <td class="active"><strong>Example</strong></td>
                   <td>
                     <div class="curl">
-                      <div>curl https://api.eatabit.io/v2/account/839df546-cff4-4b41-999e-6cdfa6fd2e78.json \</div>
+                      <div>curl https://api.eatabit.io/v2/account/839df546-cff4-4b41-999e-6cdfa6fd2e78/restaurants/+15551234567.json \</div>
                       <div class="line">-X GET \</div>
                       <div class="line">-u 839df546-cff4-4b41-999e-6cdfa6fd2e78:M4FmfvvHCCb5LmcLHWRcQg</div>
                     </div>
@@ -112,13 +105,17 @@
                   <td>
                     <div class="json">
                       <div>JSON: {</div>
-                      <div class="line">
-                        "account" : {
-                        <div class="line">"name" : "eatabit.io",</div>
-                        <div class="line">"support_phone_number" : "+15551234567",</div>
-                        <div class="line">"created" : "2013-11-27T15:26:43Z"</div>
-                        <div>}</div>
-                      </div>
+                        <div class="line">
+                          "restaurant" : {
+                          <div class="line">"name" : "Bill's Pizza",</div>
+                          <div class="line">"enabled" : true,</div>
+                          <div class="line">"premise_phone_number" : "+15551234567",</div>
+                          <div class="line">"printer_state" : "online",</div>
+                          <div class="line">"pickup_minutes" : 15,</div>
+                          <div class="line">"delivery_minutes" : 30,</div>
+                          <div class="line">"created" : "2013-11-27T15:26:43Z"</div>
+                          }
+                        </div>
                       <div>}</div>
                     </div>
                   </td>
@@ -126,7 +123,7 @@
               </table>
             </div>
 
-            <!-- Account:READ GET /v2/account/:account_id REQUEST PARAMS -->
+            <!-- POST /v2/account/:sid/restaurants/:restaurant_id ROUTE PARAMS -->
 
             <div class="panel panel-info">
               <div class="panel-heading">
@@ -139,7 +136,7 @@
                     <table class="table table-bordered">
                       <tr>
                         <td><strong>Position:</strong></td>
-                        <td>https://api.eatabit.io/<strong>:api_version</strong>/account/839df546-cff4-4b41-999e-6cdfa6fd2e78.json</td>
+                        <td>https://api.eatabit.io/<strong>:api_version</strong>/account/839df546-cff4-4b41-999e-6cdfa6fd2e78/restaurants/+15551234567.json</td>
                       </tr>
                       <tr>
                         <td><strong>Description:</strong></td>
@@ -157,7 +154,7 @@
                     <table class="table table-bordered">
                       <tr>
                         <td><strong>Position:</strong></td>
-                        <td>https://api.eatabit.io/v2/account/<strong>:sid</strong>.json</td>
+                        <td>https://api.eatabit.io/v2/account/<strong>:sid</strong>/restaurants/+15551234567.json</td>
                       </tr>
                       <tr>
                         <td><strong>Description:</strong></td>
@@ -169,10 +166,25 @@
                     </table>
                   </td>
                 </tr>
+                <tr>
+                  <td class="active"><strong>:restaurant_id</strong></td>
+                  <td class="value">
+                    <table class="table table-bordered">
+                      <tr>
+                        <td><strong>Position:</strong></td>
+                        <td>https://api.eatabit.io/v2/account/839df546-cff4-4b41-999e-6cdfa6fd2e78/restaurants/<strong>:restaurant_id</strong>.json</td>
+                      </tr>
+                      <tr>
+                        <td><strong>Description:</strong></td>
+                        <td>The restaurant premise phone number in <a href="https://en.wikipedia.org/wiki/E.164">E.164</a> format (including the leading '+').</td>
+                      </tr>
+                    </table>
+                  </td>
+                </tr>
               </table>
             </div>
 
-            <!-- GET /v2/account/:account_id Response PARAMS -->
+            <!-- POST /v2/account/:account_id/restaurants/:restaurant_id Response PARAMS -->
 
             <div class="panel panel-info">
               <div class="panel-heading">
@@ -180,7 +192,7 @@
               </div>
               <table class="table table-bordered">
                 <tr>
-                  <td class="active"><strong>:name</strong></td>
+                  <td class="active"><strong>name</strong></td>
                   <td class="value">
                     <table class="table table-bordered">
                       <tr>
@@ -189,13 +201,28 @@
                       </tr>
                       <tr>
                         <td><strong>Description:</strong></td>
-                        <td>Your account's name. This string will appear on printed receipts.</td>
+                        <td>The name of the restaurant.</td>
                       </tr>
                     </table>
                   </td>
                 </tr>
                 <tr>
-                  <td class="active"><strong>:support_phone_number</strong></td>
+                  <td class="active"><strong>enabled</strong></td>
+                  <td class="value">
+                    <table class="table table-bordered">
+                      <tr>
+                        <td><strong>Type:</strong></td>
+                        <td>Boolean</td>
+                      </tr>
+                      <tr>
+                        <td><strong>Description:</strong></td>
+                        <td>The administrative state of the restauant. Restaurants that are disabled cannot receive orders.</td>
+                      </tr>
+                    </table>
+                  </td>
+                </tr>
+                <tr>
+                  <td class="active"><strong>premise_phone_number</strong></td>
                   <td class="value">
                     <table class="table table-bordered">
                       <tr>
@@ -204,13 +231,58 @@
                       </tr>
                       <tr>
                         <td><strong>Description:</strong></td>
-                        <td>Your account's support phone number in <a href="https://en.wikipedia.org/wiki/E.164">E.164</a> format.</td>
+                        <td>The phone number of the restaurant in <a href="https://en.wikipedia.org/wiki/E.164">E.164</a> format.</td>
                       </tr>
                     </table>
                   </td>
                 </tr>
                 <tr>
-                  <td class="active"><strong>:created</strong></td>
+                  <td class="active"><strong>printer_state</strong></td>
+                  <td class="value">
+                    <table class="table table-bordered">
+                      <tr>
+                        <td><strong>Type:</strong></td>
+                        <td>String</td>
+                      </tr>
+                      <tr>
+                        <td><strong>Description:</strong></td>
+                        <td>The current state of the printer. Values are 'online' or 'offline'. If the printer_state equals 'offline', the API will not accept orders for that printer until it comes back online.</td>
+                      </tr>
+                    </table>
+                  </td>
+                </tr>
+                <tr>
+                  <td class="active"><strong>pickup_minutes</strong></td>
+                  <td class="value">
+                    <table class="table table-bordered">
+                      <tr>
+                        <td><strong>Type:</strong></td>
+                        <td>Integer</td>
+                      </tr>
+                      <tr>
+                        <td><strong>Description:</strong></td>
+                        <td>The current fulfillment time for pickup orders, in minutes.</td>
+                      </tr>
+                    </table>
+                  </td>
+                </tr>
+                <tr>
+                  <td class="active"><strong>delivery_minutes</strong></td>
+                  <td class="value">
+                    <table class="table table-bordered">
+                      <tr>
+                        <td><strong>Type:</strong></td>
+                        <td>Integer</td>
+                      </tr>
+                      <tr>
+                        <td><strong>Description:</strong></td>
+                        <td>The current fulfillment time for delivery orders, in minutes.</td>
+                      </tr>
+                    </table>
+                  </td>
+                </tr>
+                <tr>
+                  <td class="active"><strong>created</strong></td>
                   <td class="value">
                     <table class="table table-bordered">
                       <tr>
@@ -219,13 +291,14 @@
                       </tr>
                       <tr>
                         <td><strong>Description:</strong></td>
-                        <td>The UTC time that the record was created. Timestamps are in <a href="http://en.wikipedia.org/wiki/ISO_8601">iso_8601</a> format.</td>
+                        <td>The UTC time that the record was created. Timestamps are in iso8601 format.</td>
                       </tr>
                     </table>
                   </td>
                 </tr>
               </table>
             </div>
+          </div>
         </div>
       </div>
     </div>
@@ -239,7 +312,7 @@
     <!-- Bootstrap core JavaScript
     ================================================== -->
     <!-- Placed at the end of the document so the pages load faster -->
-    <script src="assets/javascript/jquery-1.10.2.min.js"></script>
-    <script src="assets/javascript/bootstrap.min.js"></script>
+    <script src="../../assets/javascript/jquery-1.10.2.min.js"></script>
+    <script src="../../assets/javascript/bootstrap.min.js"></script>
   </body>
 </html>
