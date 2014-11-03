@@ -72,6 +72,18 @@ li.list-item-indented {
   padding: 0;
 }
 
+.nav.nav-pills.nav-stacked .nav.nav-pills.nav-stacked {
+  margin-left: 1em;
+}
+
+.nav.nav-pills.nav-stacked li a:first-child {
+  font-weight: bold;
+}
+
+.nav.nav-pills.nav-stacked .nav.nav-pills.nav-stacked li a {
+  font-weight: normal;
+}
+
 /* Media queries */
 
 @media (max-width: 768px) {
