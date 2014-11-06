@@ -1,0 +1,35 @@
+.documentation .resource-content .panel-danger {
+  margin-top: 1em;
+}
+
+.documentation .panel table tr:first-child td:first-child {
+  width: 130px;
+}
+
+.documentation .line, .documentation .line .line {
+  margin-left: 15px;
+}
+
+.documentation .panel-info table {
+  margin: 0;
+}
+
+.documentation .panel-info table td:first-child {
+  width: 100px;
+}
+
+.documentation .panel-info td.value {
+  padding: 0;
+}
+
+.nav.nav-pills.nav-stacked .nav.nav-pills.nav-stacked {
+  margin-left: 1em;
+}
+
+.nav.nav-pills.nav-stacked li a:first-child {
+  font-weight: bold;
+}
+
+.nav.nav-pills.nav-stacked .nav.nav-pills.nav-stacked li a {
+  font-weight: normal;
+}
