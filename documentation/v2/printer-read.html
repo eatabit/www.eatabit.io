@@ -74,10 +74,10 @@
                 <li><a href="./account-read.html">READ</a></li>
               </ul>
             </li>
-            <li>
-              <a href="./restaurant-read.html">Restaurant</a>
+            <li class="active">
+              <a href="./printer-read.html">Printer</a>
               <ul class="nav nav-pills nav-stacked">
-                <li class="active"><a href="./restaurant-read.html">READ</a></li>
+                <li><a href="./printer-read.html">READ</a></li>
               </ul>
             </li>
             <li>
@@ -92,14 +92,14 @@
         <div class="col-md-1"></div>
         <div class="col-md-8" id="resource-container">
 
-          <div class="resource-content" id="resource-restaurants-id">
-            <h2>Restaurant</h2>
+          <div class="resource-content" id="resource-printers-id">
+            <h2>Printer</h2>
             <h3>READ</h3>
-            <h4>/v2/account/:sid/restaurants/:id.json</h4>
+            <h4>/:api_version/account/:sid/printers/:id.json</h4>
             <hr/>
             <div class="row">
 
-              <!-- GET /v2/account/:dis/restaurants/:id SUCCESS -->
+              <!-- GET /v2/account/:dis/printers/:id SUCCESS -->
 
               <div class="panel panel-success">
                 <div class="panel-heading">
@@ -114,7 +114,7 @@
                     <td class="active"><strong>Example</strong></td>
                     <td>
                       <div class="curl">
-                        <div>curl https://api.eatabit.io/v2/account/617117b5-4042-4951-b75c-88f2ee159afd/restaurants/+15551234567.json \</div>
+                        <div>curl https://api.eatabit.io/v2/account/617117b5-4042-4951-b75c-88f2ee159afd/printers/fc4a764b-4822-45d5-b91f-bc808412002f.json \</div>
                         <div class="line">-X GET \</div>
                         <div class="line">-u 617117b5-4042-4951-b75c-88f2ee159afd:c7ae2067-95bd-4722-909a-9307ce019097</div>
                       </div>
@@ -130,15 +130,12 @@
                       <div class="json">
                         <div>JSON: {</div>
                           <div class="line">
-                            "restaurant" : {
-                            <div class="line">"id" : "+15551234567",</div>
-                            <div class="line">"name" : "DeBetto and Nephews",</div>
+                            "printer" : {
+                            <div class="line">"name" : "Eatabit.io Pizza",</div>
                             <div class="line">"enabled" : true,</div>
-                            <div class="line">"premise_phone_number" : "+15551234567",</div>
-                            <div class="line">"printer_state" : "online",</div>
                             <div class="line">"pickup_minutes" : 15,</div>
                             <div class="line">"delivery_minutes" : 30,</div>
-                            <div class="line">"created" : "2013-11-27T15:26:43Z"</div>
+                            <div class="line">"state" : "offline"</div>
                             }
                           </div>
                         <div>}</div>
@@ -148,7 +145,7 @@
                 </table>
               </div>
 
-              <!-- POST /v2/account/:sid/restaurants/:id ROUTE PARAMS -->
+              <!-- POST /v2/account/:sid/printers/:id ROUTE PARAMS -->
 
               <div class="panel panel-info">
                 <div class="panel-heading">
@@ -161,13 +158,13 @@
                       <table class="table table-bordered">
                         <tr>
                           <td><strong>Position:</strong></td>
-                          <td>https://api.eatabit.io/<strong>:api_version</strong>/account/617117b5-4042-4951-b75c-88f2ee159afd/restaurants/+15551234567.json</td>
+                          <td>https://api.eatabit.io/<strong>:api_version</strong>/account/617117b5-4042-4951-b75c-88f2ee159afd/printers/fc4a764b-4822-45d5-b91f-bc808412002f.json</td>
                         </tr>
                         <tr>
                           <td><strong>Description:</strong></td>
                           <td>
-                            The <strong>:api_version</strong> of the eatabit.io API. 
-                            The current version is v2.
+                            The <strong>:api_version</strong> of the eatabit.io API.
+                            The current version is: <strong>v2</strong>.
                           </td>
                         </tr>
                       </table>
@@ -179,12 +176,12 @@
                       <table class="table table-bordered">
                         <tr>
                           <td><strong>Position:</strong></td>
-                          <td>https://api.eatabit.io/v2/account/<strong>:sid</strong>/restaurants/+15551234567.json</td>
+                          <td>https://api.eatabit.io/v2/account/<strong>:sid</strong>/printers/fc4a764b-4822-45d5-b91f-bc808412002f.json</td>
                         </tr>
                         <tr>
                           <td><strong>Description:</strong></td>
                           <td>
-                            The <strong>:sid</strong> of your eatabit.io account. 
+                            The <strong>:sid</strong> of your eatabit.io account.
                             This is the same <strong>sid</strong> as is passed as <strong>USER</strong> in the request <strong><a href="https://en.wikipedia.org/wiki/Basic_access_authentication">HTTP Basic auth</a></strong>.
                           </td>
                         </tr>
@@ -197,11 +194,11 @@
                       <table class="table table-bordered">
                         <tr>
                           <td><strong>Position:</strong></td>
-                          <td>https://api.eatabit.io/v2/account/617117b5-4042-4951-b75c-88f2ee159afd/restaurants/<strong>:id</strong>.json</td>
+                          <td>https://api.eatabit.io/v2/account/617117b5-4042-4951-b75c-88f2ee159afd/printers/<strong>:id</strong>.json</td>
                         </tr>
                         <tr>
                           <td><strong>Description:</strong></td>
-                          <td>The restaurant premise phone number in <a href="https://en.wikipedia.org/wiki/E.164">E.164</a> format (including the leading '+').</td>
+                          <td>The printer's id on the eatabit.io API. <a href="mailto:hey@eatabit.com">Contact us</a></td>
                         </tr>
                       </table>
                     </td>
@@ -209,28 +206,13 @@
                 </table>
               </div>
 
-              <!-- POST /v2/account/:account_id/restaurants/:id Response PARAMS -->
+              <!-- POST /v2/account/:account_id/printers/:id Response PARAMS -->
 
               <div class="panel panel-info">
                 <div class="panel-heading">
                   <h3 class="panel-title">Response parameters</h3>
                 </div>
                 <table class="table table-bordered">
-                  <tr>
-                    <td class="active"><strong>id</strong></td>
-                    <td class="value">
-                      <table class="table table-bordered">
-                        <tr>
-                          <td><strong>Type:</strong></td>
-                          <td>String</td>
-                        </tr>
-                        <tr>
-                          <td><strong>Description:</strong></td>
-                          <td>The phone number of the restaurant in <a href="https://en.wikipedia.org/wiki/E.164">E.164</a> format.</td>
-                        </tr>
-                      </table>
-                    </td>
-                  </tr>
                   <tr>
                     <td class="active"><strong>name</strong></td>
                     <td class="value">
@@ -241,7 +223,7 @@
                         </tr>
                         <tr>
                           <td><strong>Description:</strong></td>
-                          <td>The name of the restaurant.</td>
+                          <td>The name of the Restaurant that the printer is located in.</td>
                         </tr>
                       </table>
                     </td>
@@ -262,22 +244,7 @@
                     </td>
                   </tr>
                   <tr>
-                    <td class="active"><strong>premise_phone_number</strong></td>
-                    <td class="value">
-                      <table class="table table-bordered">
-                        <tr>
-                          <td><strong>Type:</strong></td>
-                          <td>String</td>
-                        </tr>
-                        <tr>
-                          <td><strong>Description:</strong></td>
-                          <td>The phone number of the restaurant in <a href="https://en.wikipedia.org/wiki/E.164">E.164</a> format.</td>
-                        </tr>
-                      </table>
-                    </td>
-                  </tr>
-                  <tr>
-                    <td class="active"><strong>printer_state</strong></td>
+                    <td class="active"><strong>state</strong></td>
                     <td class="value">
                       <table class="table table-bordered">
                         <tr>
@@ -317,21 +284,6 @@
                         <tr>
                           <td><strong>Description:</strong></td>
                           <td>The current fulfillment time for delivery orders, in minutes.</td>
-                        </tr>
-                      </table>
-                    </td>
-                  </tr>
-                  <tr>
-                    <td class="active"><strong>created</strong></td>
-                    <td class="value">
-                      <table class="table table-bordered">
-                        <tr>
-                          <td><strong>Type:</strong></td>
-                          <td>Timestamp</td>
-                        </tr>
-                        <tr>
-                          <td><strong>Description:</strong></td>
-                          <td>The UTC time that the record was created. Timestamps are in <a href="http://en.wikipedia.org/wiki/ISO_8601">iso8601 format</a>.</td>
                         </tr>
                       </table>
                     </td>
