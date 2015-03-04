@@ -34,3 +34,12 @@ body {
   line-height: 1;
   letter-spacing: -1px;
 }
+
+.row.vimeo h4 {
+  font-weight: normal;
+  color: rgb(90, 90, 90);
+}
+
+.row.vimeo a {
+  text-decoration: none;
+}
