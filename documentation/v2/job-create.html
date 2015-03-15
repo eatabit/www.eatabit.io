@@ -138,6 +138,8 @@
                             <div class="line">"body" : "One large pepperoni pizza",</div>
                             <div class="line">"state" : "queued",</div>
                             <div class="line">"environment" : "development",</div>
+                            <div class="line">"pickup_minutes" : 15,</div>
+                            <div class="line">"delivery_minutes" : 30,</div>
                             <div class="line">"status_url" : "https://api.mysite.com/orders/1024768.json",</div>
                             <div class="line">"status_url_method" : "PUT",</div>
                             <div class="line">"created" : "2013-11-27T15:26:43Z"</div>
@@ -368,6 +370,42 @@
                             The job environment as defined by the account used to create it.
                             Jobs created using your development account will be of environment: 'development'.
                             Development jobs are for testing purposes and will not be sent to the printer.
+                          </td>
+                        </tr>
+                      </table>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td class="active"><strong>pickup_minutes</strong></td>
+                    <td class="value">
+                      <table class="table table-bordered">
+                        <tr>
+                          <td><strong>Type:</strong></td>
+                          <td>Integer</td>
+                        </tr>
+                        <tr>
+                          <td><strong>Description:</strong></td>
+                          <td>
+                            The number of minutes to fulfill a <strong>Pickup</strong> order, as specified by the restaurant, at the time the Job was created.
+                            This value can be subtracted from the <strong>created</strong> param below to determine the Job fulfillment time.
+                          </td>
+                        </tr>
+                      </table>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td class="active"><strong>delivery_minutes</strong></td>
+                    <td class="value">
+                      <table class="table table-bordered">
+                        <tr>
+                          <td><strong>Type:</strong></td>
+                          <td>Integer</td>
+                        </tr>
+                        <tr>
+                          <td><strong>Description:</strong></td>
+                          <td>
+                            The number of minutes to fulfill a <strong>Delivery</strong> order, as specified by the restaurant, at the time the Job was created.
+                            This value can be subtracted from the <strong>created</strong> param below to determine the Job fulfillment time.
                           </td>
                         </tr>
                       </table>
