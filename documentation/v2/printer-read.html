@@ -87,6 +87,9 @@
                 <li><a href="./job-create.html">CREATE</a></li>
               </ul>
             </li>
+            <li>
+              <a href="./ticket-format.html">Ticket format</a>
+            </li>
           </ul>
         </div>
         <div class="col-md-1"></div>
@@ -135,7 +138,9 @@
                             <div class="line">"enabled" : true,</div>
                             <div class="line">"pickup_minutes" : 15,</div>
                             <div class="line">"delivery_minutes" : 30,</div>
-                            <div class="line">"state" : "offline"</div>
+                            <div class="line">"state" : "unavailable",</div>
+                            <div class="line">"online" : false,</div>
+                            <div class="line">"has_paper" : false</div>
                             }
                           </div>
                         <div>}</div>
@@ -253,7 +258,49 @@
                         </tr>
                         <tr>
                           <td><strong>Description:</strong></td>
-                          <td>The current state of the printer. Values are 'online' or 'offline'. If the printer_state equals 'offline', the API will not accept orders for that printer until it comes back online.</td>
+                          <td>
+                            Printer :state is a summary value composed of :online and :has_paper.
+                            Possible values are "available" or "unavailable".
+                            If the printer :state equals "unavailable", the API will still accept orders for the printer in the case it comes back online and/or its paper is refilled.
+                          </td>
+                        </tr>
+                      </table>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td class="active"><strong>online</strong></td>
+                    <td class="value">
+                      <table class="table table-bordered">
+                        <tr>
+                          <td><strong>Type:</strong></td>
+                          <td>Boolean</td>
+                        </tr>
+                        <tr>
+                          <td><strong>Description:</strong></td>
+                          <td>
+                            The cellular connectivity state of the printer.
+                            A value of: false means that the printer is not registered to the cellular network and cannot receive jobs.
+                            If a printer is powered off, this value will be: false.
+                          </td>
+                        </tr>
+                      </table>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td class="active"><strong>has_paper</strong></td>
+                    <td class="value">
+                      <table class="table table-bordered">
+                        <tr>
+                          <td><strong>Type:</strong></td>
+                          <td>Boolean</td>
+                        </tr>
+                        <tr>
+                          <td><strong>Description:</strong></td>
+                          <td>
+                            The current state of the paper in the printer.
+                            A value of: false means the printer is out of paper.
+                            Upon refill of the paper, the printer will update this value to: true.
+                          </td>
                         </tr>
                       </table>
                     </td>

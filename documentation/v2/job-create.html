@@ -87,6 +87,9 @@
                 <li><a href="./job-create.html">CREATE</a></li>
               </ul>
             </li>
+            <li>
+              <a href="./ticket-format.html">Ticket format</a>
+            </li>
           </ul>
         </div>
         <div class="col-md-1"></div>
@@ -116,10 +119,16 @@
                       <div class="curl">
                         <div>curl https://api.eatabit.io/v2/account/617117b5-4042-4951-b75c-88f2ee159afd/printers/fc4a764b-4822-45d5-b91f-bc808412002f/jobs.json \</div>
                         <div class="line">-X POST \</div>
+                        <div class="line">-H "Content-Type: application/json" \</div>
                         <div class="line">-u 617117b5-4042-4951-b75c-88f2ee159afd:c7ae2067-95bd-4722-909a-9307ce019097 \</div>
-                        <div class="line">--data-urlencode 'body=One large pepperoni pizza with breadsticks' \</div>
-                        <div class="line">--data-urlencode 'status_url=https://api.mysite.com/orders/1024768.json' \</div>
-                        <div class="line">--data-urlencode 'status_url_method=PUT'</div>
+                        <div class="line">-d \
+                          <div class="line">'{
+                            <div class="line">"body":"One large pepperoni pizza",</div>
+                            <div class="line">"status_url":"https://api.mysite.com/orders/1024768.json",</div>
+                            <div class="line">"status_url_method":"PUT"</div>
+                          </div>
+                          <div class="line">}'</div>
+                        </div>
                       </div>
                     </td>
                   </tr>
@@ -142,7 +151,7 @@
                             <div class="line">"delivery_minutes" : 30,</div>
                             <div class="line">"status_url" : "https://api.mysite.com/orders/1024768.json",</div>
                             <div class="line">"status_url_method" : "PUT",</div>
-                            <div class="line">"created" : "2013-11-27T15:26:43Z"</div>
+                            <div class="line">"created_at" : "2013-11-27T15:26:43Z"</div>
                             }
                           </div>
                         <div>}</div>
@@ -234,7 +243,7 @@
                         </tr>
                         <tr>
                           <td><strong>Length:</strong></td>
-                          <td>1..1014 characters</td>
+                          <td>1..30000 characters</td>
                         </tr>
                         <tr>
                           <td><strong>Description:</strong></td>
@@ -472,7 +481,7 @@
                     </td>
                   </tr>
                   <tr>
-                    <td class="active"><strong>created</strong></td>
+                    <td class="active"><strong>created_at</strong></td>
                     <td class="value">
                       <table class="table table-bordered">
                         <tr>
