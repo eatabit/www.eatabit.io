@@ -1,3 +1,7 @@
+body.page-documentation .row.title h1 {
+  margin-top: 0;
+}
+
 .documentation .resource-content .panel-danger {
   margin-top: 1em;
 }
