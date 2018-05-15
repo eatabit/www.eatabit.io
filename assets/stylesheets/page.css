@@ -1,3 +1,22 @@
-body {
-  margin-top: 4rem;
+.navbar-brand {
+  font-size: 2rem;
+}
+
+.row.intro {
+  padding-top: 2rem;
+  padding-bottom: 4rem;
+}
+
+.row.title  {
+  padding-top: 8rem;
+  padding-bottom: 4rem;
+}
+
+.row.title h1 {
+  background-color: black;
+  color: white;
+}
+
+.row.printer {
+  padding-top: 2rem;
 }

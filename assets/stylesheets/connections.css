@@ -1,11 +1,3 @@
-.row.vendors {
-  margin-bottom: 10rem;
-}
-
-.row.printer {
-  padding-top: 8rem;
-}
-
 .connection-red {
   border: 3rem solid #dc3545;
   border-radius: 300px;
