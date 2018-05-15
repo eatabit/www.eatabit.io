@@ -1,0 +1,47 @@
+.row.vendors {
+  margin-bottom: 10rem;
+}
+
+.row.printer {
+  padding-top: 8rem;
+}
+
+.connection-red {
+  border: 3rem solid #dc3545;
+  border-radius: 300px;
+  z-index: -1;
+}
+
+.connection-orange {
+  border: 3rem solid #fd7e14;
+  border-radius: 300px;
+  z-index: -1;
+}
+
+.connection-yellow {
+  border: 3rem solid #ffc107;
+  border-radius: 300px;
+  z-index: -1;
+}
+
+.connection-green {
+  border: 3rem solid #28a745;
+  border-radius: 300px;
+  z-index: -1;
+}
+
+.connection-blue {
+  border: 3rem solid #007bff;
+  border-radius: 300px;
+  z-index: -1;
+}
+
+.connection-purple {
+  border: 3rem solid #6f42c1;
+  border-radius: 300px;
+  z-index: -1;
+}
+
+.cta {
+  width: 2rem;
+}
