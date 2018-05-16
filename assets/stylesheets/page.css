@@ -32,24 +32,34 @@
   padding-top: 4rem;
 }
 
-.row.info-1 .cellular {
-  background-color: #ffc107;
-  background-image: url("../../assets/images/board.png");
+.row.info-1 .available, .row.info-1 .universal,
+.row.info-2 .reliable, .row.info-2 .configurable {
   background-repeat: no-repeat;
   background-position: 50% 200px;
   background-size: auto;
   height: 400px;
 }
 
-.row.info-1 .cellular h2, .row.info-1 .cellular p {
+.row.info-1 .available {
+  background-color: #ffc107;
+  background-image: url("../../assets/images/board.png");
+}
+
+.row.info-1 .available h2, .row.info-1 .available p {
   color: #333;
 }
 
 .row.info-1 .universal {
   background-color: #28a745;
   background-image: url("../../assets/images/receipt.png");
-  background-repeat: no-repeat;
-  background-position: 50% 200px;
-  background-size: auto;
-  height: 400px;
+}
+
+.row.info-2 .reliable {
+  background-color: #007bff;
+  background-image: url("../../assets/images/count.png");
+}
+
+.row.info-2 .configurable {
+  background-color: #dc3545;
+  background-image: url("../../assets/images/app.png");
 }
