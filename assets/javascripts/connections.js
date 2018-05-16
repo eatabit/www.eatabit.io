@@ -6,5 +6,5 @@ jQuery(document).ready(function() {
   jQuery('#printer').connections({ to: '#logo-5', 'class': 'connection-blue' });
   jQuery('#printer').connections({ to: '#logo-6', 'class': 'connection-purple' });
 
-  $(".row.printer").css('padding-top', '2rem');
+  jQuery(".row.printer").css('padding-top', '2rem');
 });

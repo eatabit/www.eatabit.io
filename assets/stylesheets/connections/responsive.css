@@ -35,7 +35,8 @@
     z-index: -1;
   }
 
-  .cta {
-    width: 0rem;
+  .row.info-1 .universal {
+    background-size: 70%;
+    background-position: bottom center;
   }
 }

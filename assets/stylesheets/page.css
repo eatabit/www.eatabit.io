@@ -27,3 +27,29 @@
   background-color: #343a40;
   color: white;
 }
+
+.row.info-1 {
+  padding-top: 4rem;
+}
+
+.row.info-1 .cellular {
+  background-color: #ffc107;
+  background-image: url("../../assets/images/board.png");
+  background-repeat: no-repeat;
+  background-position: 50% 200px;
+  background-size: auto;
+  height: 400px;
+}
+
+.row.info-1 .cellular h2, .row.info-1 .cellular p {
+  color: #333;
+}
+
+.row.info-1 .universal {
+  background-color: #28a745;
+  background-image: url("../../assets/images/receipt.png");
+  background-repeat: no-repeat;
+  background-position: 50% 200px;
+  background-size: auto;
+  height: 400px;
+}
