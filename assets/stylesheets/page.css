@@ -72,3 +72,8 @@
   background-color: #dc3545;
   background-image: url("../../assets/images/app.png");
 }
+
+.row.alert {
+  background-color: #dc3545;
+  color: white;
+}
